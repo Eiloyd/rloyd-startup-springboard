@@ -218,17 +218,17 @@ function FundingProgramme() {
         </div>
       </section>
 
-      <Section kicker="Non-Refundable Grant Pool" title={<>Up to <span className="text-primary">₹20 Lakhs</span> for the top five</>} intro="Shared by the five top-performing startups. Grant ≠ investment." tone="surface">
-        <div className="grid gap-6 md:grid-cols-[.8fr_1.2fr] md:items-stretch">
-          <img src={posterAsset} alt="Riloyd Startup Funding Programme poster with the five winning grant tiers" width={1088} height={1456} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[70vh] w-full rounded-lg border border-border object-contain md:h-full md:max-h-none md:object-cover md:object-top" />
+      <Section kicker="Non-Refundable Grant Pool" title={<>Up to <span className="text-primary">₹20 Lakhs</span> for the top five</>} intro="Shared by the five top-performing startups. Grant ≠ investment." tone="surface" compact>
+        <div className="grid gap-4 md:grid-cols-[.8fr_1.2fr] md:items-stretch">
+          <img src={posterAsset} alt="Riloyd Startup Funding Programme poster with the five winning grant tiers" width={1088} height={1456} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[46vh] w-full rounded-lg border border-border object-contain md:h-full md:max-h-[430px] md:object-cover md:object-top" />
           <div className="flex flex-col">
-            <div className="grid flex-1 grid-cols-2 gap-3">
+            <div className="grid flex-1 grid-cols-2 gap-2.5">
               {tiers.map(([rank, amount]) => (
-                <div key={rank} className="flex flex-col justify-center rounded-md border border-border bg-background px-5 py-6 transition hover:-translate-y-0.5 hover:border-primary/60"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{rank} Startup</p><p className="mt-1 whitespace-nowrap text-xl font-black sm:text-3xl">{amount}</p><p className="text-[11px] text-muted-foreground">Non-refundable grant</p></div>
+                <div key={rank} className="flex flex-col justify-center rounded-md border border-border bg-background px-5 py-4 transition hover:-translate-y-0.5 hover:border-primary/60"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{rank} Startup</p><p className="mt-1 whitespace-nowrap text-lg font-black sm:text-2xl">{amount}</p><p className="text-[11px] text-muted-foreground">Non-refundable grant</p></div>
               ))}
-              <div className="flex flex-col justify-center rounded-md border border-primary/40 bg-primary/10 px-5 py-6"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Total</p><p className="mt-1 whitespace-nowrap text-xl font-black sm:text-3xl">₹20 Lakhs</p><p className="text-[11px] text-muted-foreground">Across five startups</p></div>
+              <div className="flex flex-col justify-center rounded-md border border-primary/40 bg-primary/10 px-5 py-4"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Total</p><p className="mt-1 whitespace-nowrap text-lg font-black sm:text-2xl">₹20 Lakhs</p><p className="text-[11px] text-muted-foreground">Across five startups</p></div>
             </div>
-            <p className="mt-5 text-xs leading-relaxed text-muted-foreground">Subject to eligibility, evaluation, selection and Terms &amp; Conditions.</p>
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">Subject to eligibility, evaluation, selection and Terms &amp; Conditions.</p>
           </div>
         </div>
       </Section>
