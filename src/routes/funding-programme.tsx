@@ -317,7 +317,7 @@ function FundingProgramme() {
       <section className="border-b border-border">
         <div className="grid sm:grid-cols-3">
           {[[stageAsset,"Pitch on the summit stage"],[networkingAsset,"Network with founders & investors"],[gwaliorAsset,"Three days in historic Gwalior"]].map(([src,label]) => (
-            <figure key={label} className="group relative h-64 overflow-hidden sm:h-80"><img src={src} alt={label} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><figcaption className="hero-shade absolute inset-x-0 bottom-0 px-5 pb-5 pt-16 text-sm font-extrabold uppercase tracking-wide">{label}</figcaption></figure>
+            <figure key={label} className="group relative h-64 overflow-hidden sm:h-80"><img src={src} alt={label} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/70 to-transparent px-5 pb-5 pt-16 text-sm font-extrabold uppercase tracking-wide">{label}</figcaption></figure>
           ))}
         </div>
       </section>
