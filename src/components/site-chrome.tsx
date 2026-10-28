@@ -110,13 +110,6 @@ export function SiteFooter() {
         </div>
         <div className="mt-4 flex items-center gap-2"><a className="social-link" href="https://www.linkedin.com/company/145354558" target="_blank" rel="noopener noreferrer" aria-label="Riloyd on LinkedIn"><Linkedin className="h-4 w-4" aria-hidden="true" /></a><a className="social-link" href="https://www.instagram.com/riloyd.in/" target="_blank" rel="noopener noreferrer" aria-label="Riloyd on Instagram"><Instagram className="h-4 w-4" aria-hidden="true" /></a></div>
       </div>
-        <div className="hidden sm:mt-5 sm:block sm:min-w-0 xl:col-start-2 xl:col-span-4 xl:row-start-2">
-          <div className="flex items-center gap-2">
-            <Link to="/global-presence" aria-label="Explore Riloyd Global presence" className="block shrink-0"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" loading="lazy" className="h-7 w-auto max-w-[130px] object-contain object-left" decoding="async" /></Link>
-            <h2 className="text-xs font-bold text-foreground">Global Presence</h2>
-          </div>
-          <div className="mt-3 grid grid-cols-4 gap-x-4 gap-y-1.5 text-xs text-muted-foreground">{marketOrder.map((key) => { const market = marketConfigs[key]; return <Link key={key} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}</div>
-        </div>
       </div>
       <div className="order-7 col-span-3 sm:order-5 sm:col-span-2 xl:col-span-1"><h2 className="text-xs font-bold">Our Services</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground">{serviceOrder.map((key) => { const service = serviceConfigs[key]; return service ? <Link key={key} to="/services/$slug" params={{ slug: service.slug }}>{service.shortTitle}</Link> : null; })}</div></div>
       <div className="order-8 col-span-3 sm:order-6 sm:col-span-2 xl:col-span-1"><h2 className="text-xs font-bold">Downloads</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/research" className="font-medium text-foreground">Our Research &amp; Analysis</Link><Link to="/downloads">Business Valuation Reports</Link><Link to="/downloads">Business Reports &amp; Documents</Link><Link to="/downloads">All Reports</Link><p className="text-[10px] leading-relaxed text-muted-foreground/80">Use the report number and publish date to download.</p></div></div>
