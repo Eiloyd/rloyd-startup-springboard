@@ -1,4 +1,5 @@
 ## In progress
+- [ ] Footer: show CIN Number U85500MP2023PTC068770 below the "Riloyd — a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED" line
 - [ ] Funding popup: smaller on mobile so it does not cover the whole screen, and tapping the popup closes it so visitors can explore the site
 - [ ] Funding programme page: content taken from rishishwarindustry.in/funding-programme, laid out in Riloyd's own theme and logo
 - [ ] Summit popup poster: five prize tiers (1st ₹10L, 2nd ₹5L, 3rd ₹2.5L, 4th ₹1.5L, 5th ₹1L, total ₹20L) — repair mis-numbered trophy rank labels
