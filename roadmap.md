@@ -64,3 +64,4 @@
 - [x] Funding popup: poster left / text right on tablet & desktop (50-50), poster top / text below on phone; popup height now hugs the poster
 - [x] Homepage stats updated: Funding Enabled ₹150Cr+, Industries Served 15+, Businesses Advised 75+, Startup Ideas Analyzed 200+
 - [x] Footer: Global Presence moved below Contact (desktop & tablet), logo beside the heading, countries in 4 columns
+- [ ] Desktop footer: Contact above, Global Presence below (logo beside the "Global Presence" heading, countries in 4 columns); mobile and tablet must stay exactly as they are
