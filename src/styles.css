@@ -262,11 +262,12 @@
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 
-/* Country logos carry either a light or a dark artwork. Whichever tone fights the
-   active theme is shown as a solid silhouette so it always reads on the card. */
-.logo-tone-dark { filter: brightness(0) invert(1); }
-.light .logo-tone-dark { filter: none; }
-.light .logo-tone-light { filter: brightness(0); }
+/* Country logos ship in two artworks: one for dark surfaces, one for light.
+   Each theme shows only its matching file so flag colours stay intact. */
+.logo-show-dark { display: block; }
+.light .logo-show-dark { display: none; }
+.logo-show-light { display: none; }
+.light .logo-show-light { display: block; }
 
 /* White card surfaces: supporting text reads black, not grey. */
 .bg-card {
