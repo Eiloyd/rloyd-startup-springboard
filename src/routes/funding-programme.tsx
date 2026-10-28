@@ -21,6 +21,9 @@ import posterAsset from "@/assets/local/funding-programme-poster.webp";
 import pitchAsset from "@/assets/local/funding-pitch-stage.webp";
 import mentorAsset from "@/assets/local/funding-mentorship.webp";
 import gwaliorAsset from "@/assets/local/funding-gwalior.webp";
+import stageAsset from "@/assets/local/summit-stage-india.webp";
+import networkingAsset from "@/assets/local/summit-networking-india.webp";
+import prototypeAsset from "@/assets/local/summit-prototype-india.webp";
 import investorAsset from "@/assets/local/funding-investor-deal.webp";
 
 const ZOHOPUBLIC = "https://forms.zohopublic.in/RIPLSTORES/form/StartupIdeaRegistrationForm/formperma/1SNzTjiKwSF14T0BCEyJLvZCZDDowZl3NYWbAjpy1KE";
@@ -170,7 +173,7 @@ function FundingProgramme() {
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
       <section className="hero-shell relative border-b border-border lg:flex lg:min-h-[92svh] lg:items-center">
-        <img src={gwaliorAsset} alt="" aria-hidden width={1200} height={912} className="absolute inset-0 h-full w-full object-cover" decoding="async" fetchPriority="high" />
+        <img src={stageAsset} alt="" aria-hidden width={1420} height={912} className="absolute inset-0 h-full w-full object-cover" decoding="async" fetchPriority="high" />
         <div className="hero-shade absolute inset-0" />
         <div className="relative z-10 mx-auto w-full max-w-[1380px] px-5 py-16 sm:px-6 lg:px-12">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
@@ -203,15 +206,22 @@ function FundingProgramme() {
         </div>
       </section>
 
+
+      <section className="border-b border-border bg-primary text-primary-foreground">
+        <div className="mx-auto grid max-w-[1380px] grid-cols-2 gap-px px-5 py-6 sm:px-6 md:grid-cols-4 lg:px-12">
+          {[["₹20 Lakhs","Grant for top 5"],["₹5 Crore","Investor funding opportunity"],["Top 20","₹25K–₹50K prototype grant"],["25 Ideas","₹10,000 reward each"]].map(([v,l]) => <div key={l} className="px-2 py-2 text-center"><p className="text-2xl font-black sm:text-3xl">{v}</p><p className="mt-1 text-[11px] font-semibold uppercase tracking-wider opacity-90">{l}</p></div>)}
+        </div>
+      </section>
+
       <Section kicker="Non-Refundable Grant Pool" title={<>Up to <span className="text-primary">₹20 Lakhs</span> for the top five</>} intro="Shared by the five top-performing startups. Grant ≠ investment." tone="surface">
-        <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:items-center">
-          <img src={posterAsset} alt="Riloyd Startup Funding Programme poster with the five winning grant tiers" width={1088} height={1456} loading="lazy" decoding="async" className="mx-auto max-h-[70vh] w-auto max-w-full rounded-lg border border-border object-contain" />
-          <div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-[.8fr_1.2fr] md:items-stretch">
+          <img src={posterAsset} alt="Riloyd Startup Funding Programme poster with the five winning grant tiers" width={1088} height={1456} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[70vh] w-full rounded-lg border border-border object-contain md:h-full md:max-h-none md:object-cover md:object-top" />
+          <div className="flex flex-col">
+            <div className="grid flex-1 grid-cols-2 gap-3">
               {tiers.map(([rank, amount]) => (
-                <div key={rank} className="rounded-md border border-border bg-background px-4 py-5"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{rank} Startup</p><p className="mt-1 text-2xl font-black">{amount}</p><p className="text-[11px] text-muted-foreground">Non-refundable grant</p></div>
+                <div key={rank} className="flex flex-col justify-center rounded-md border border-border bg-background px-5 py-6 transition hover:-translate-y-0.5 hover:border-primary/60"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{rank} Startup</p><p className="mt-1 whitespace-nowrap text-xl font-black sm:text-3xl">{amount}</p><p className="text-[11px] text-muted-foreground">Non-refundable grant</p></div>
               ))}
-              <div className="rounded-md border border-primary/40 bg-primary/10 px-4 py-5"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Total</p><p className="mt-1 text-2xl font-black">₹20 Lakhs</p><p className="text-[11px] text-muted-foreground">Across five startups</p></div>
+              <div className="flex flex-col justify-center rounded-md border border-primary/40 bg-primary/10 px-5 py-6"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Total</p><p className="mt-1 whitespace-nowrap text-xl font-black sm:text-3xl">₹20 Lakhs</p><p className="text-[11px] text-muted-foreground">Across five startups</p></div>
             </div>
             <p className="mt-5 text-xs leading-relaxed text-muted-foreground">Subject to eligibility, evaluation, selection and Terms &amp; Conditions.</p>
           </div>
@@ -219,6 +229,7 @@ function FundingProgramme() {
       </Section>
 
       <Section id="prototype" kicker="Ideas get funded too" title={<>Have an idea? <span className="text-primary">Build it.</span></>}>
+        <img src={prototypeAsset} alt="Young Indian founders building a product prototype together" width={1200} height={912} loading="lazy" decoding="async" className="mb-5 h-56 w-full rounded-lg border border-border object-cover sm:h-72 lg:h-80" />
         <div className="grid gap-5 lg:grid-cols-2">
           <article className="rounded-lg border border-border bg-surface p-6 sm:p-8">
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Top 20 prototype grant</p>
@@ -302,6 +313,14 @@ function FundingProgramme() {
           </div>
         </div>
       </Section>
+
+      <section className="border-b border-border">
+        <div className="grid sm:grid-cols-3">
+          {[[stageAsset,"Pitch on the summit stage"],[networkingAsset,"Network with founders & investors"],[gwaliorAsset,"Three days in historic Gwalior"]].map(([src,label]) => (
+            <figure key={label} className="group relative h-64 overflow-hidden sm:h-80"><img src={src} alt={label} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/70 to-transparent px-5 pb-5 pt-16 text-sm font-extrabold uppercase tracking-wide">{label}</figcaption></figure>
+          ))}
+        </div>
+      </section>
 
       <section className="border-b border-border">
         <div className="mx-auto max-w-[1380px] px-5 py-16 text-center sm:px-6 lg:px-12">
