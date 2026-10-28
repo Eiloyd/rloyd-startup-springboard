@@ -115,19 +115,21 @@ export function SiteFooter() {
       <div className="order-8 col-span-3 sm:order-6 sm:col-span-2 xl:col-span-1"><h2 className="text-xs font-bold">Downloads</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/downloads" className="font-medium text-foreground">All Reports &amp; Documents</Link><Link to="/downloads">Business Reports</Link><Link to="/downloads">Business Valuation Reports</Link><Link to="/downloads">Business Researches &amp; Reports</Link><p className="text-[10px] leading-relaxed text-muted-foreground/80">Use the report number and publish date to download.</p></div></div>
     </div>
     <div className="border-t border-border px-5 py-4 text-center text-[10px] text-muted-foreground">
-      <div className="mx-auto mb-3 hidden max-w-[1380px] grid-cols-2 gap-x-6 gap-y-3 text-left lg:grid">
-        <div>
+      <div className="mx-auto max-w-[1380px] lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)_minmax(0,1fr)] lg:items-center lg:gap-4">
+        <div className="hidden text-left lg:block">
           <h3 className="text-[10px] font-bold text-foreground">Registered Office</h3>
           <p className="mt-1.5">Rishishwar Industry Pvt. Ltd., Mahadaji Nagar, Lashkar,<br />Gird, Gwalior, Madhya Pradesh &ndash; 474001</p>
         </div>
-        <div className="text-right">
+        <div>
+          <p>© {new Date().getFullYear()} RILOYD. All rights reserved by RISHISHWAR INDUSTRY PRIVATE LIMITED.</p>
+          <p className="mt-2">Riloyd &mdash; a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED</p>
+          <p className="mt-2">CIN Number: U85500MP2023PTC068770</p>
+        </div>
+        <div className="hidden text-right lg:block">
           <h3 className="text-[10px] font-bold text-foreground">Corporate Office</h3>
           <p className="mt-1.5">Gincube Center, Motimal, Lashkar, Gird,<br />Gwalior &ndash; 474009</p>
         </div>
       </div>
-      <p>© {new Date().getFullYear()} RILOYD. All rights reserved by RISHISHWAR INDUSTRY PRIVATE LIMITED.</p>
-      <p className="mt-2">Riloyd &mdash; a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED</p>
-      <p className="mt-2">CIN Number: U85500MP2023PTC068770</p>
     </div>
   </footer>;
 }

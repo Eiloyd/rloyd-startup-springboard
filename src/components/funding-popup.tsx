@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { CheckCircle2, Rocket, X } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import posterAsset from "@/assets/local/funding-programme-poster.webp";
 import {
   fundingApplicationSchema,
@@ -75,36 +76,39 @@ export function FundingPopup() {
             type="button"
             onClick={() => change(false)}
             aria-label="Close"
-            className="absolute right-3 top-3 z-10 rounded-full bg-background/80 p-1.5 text-foreground hover:bg-background"
+            className="absolute right-3 top-3 z-10 block! rounded-full bg-background/80 p-1.5 text-foreground hover:bg-background"
           >
             <X className="h-4 w-4" />
           </button>
-          <div className={showForm ? "grid" : "grid md:grid-cols-[7fr_3fr]"}>
+          <div className={showForm ? "grid" : "grid h-[60vh] grid-rows-[4fr_1fr] md:h-auto md:grid-cols-[8fr_2fr] md:grid-rows-1"}>
             {!showForm && <button
               type="button"
               onClick={() => change(false)}
               aria-label="Close funding programme popup"
-              className="relative block w-full cursor-zoom-out bg-background md:h-full"
+              className="relative block h-full min-h-0 w-full cursor-zoom-out bg-background"
             >
               <img decoding="async"
                 src={posterAsset}
                 alt="Riloyd Startup Funding Programme – Grant up to ₹20 Lakhs for the top 5 startups: 1st ₹10 Lakhs, 2nd ₹5 Lakhs, 3rd ₹2.5 Lakhs, 4th ₹1.5 Lakhs, 5th ₹1 Lakh"
                 width={1086}
                 height={1448}
-                className="max-h-[45vh] w-full object-contain md:max-h-[88vh]"
+                className="h-full w-full object-contain md:h-auto md:max-h-[88vh]"
               />
               <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-background/80 px-2.5 py-1 text-[10px] font-medium text-muted-foreground md:hidden">
                 Tap to close
               </span>
             </button>}
-            <div className="bg-background p-2.5 sm:p-5">
+            <div className={showForm ? "bg-background p-2.5 sm:p-5" : "min-h-0 overflow-y-auto bg-background p-2 md:p-2.5"}>
+              {!showForm && !code && <Button type="button" onClick={() => setShowForm(true)} className="mb-1 h-7 w-full gap-1 rounded-md px-1 text-[10px] font-bold uppercase">
+                <Rocket className="h-3 w-3" /> Register Now
+              </Button>}
               <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-primary sm:text-[10px]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" /> Registrations Open
               </span>
-              <DialogTitle className="mt-1.5 text-sm font-bold text-foreground sm:text-xl">
+              <DialogTitle className="mt-1 text-xs font-bold text-foreground md:text-sm">
                 Apply Your <span className="text-primary">Startup</span> Now
               </DialogTitle>
-              <DialogDescription className="mt-1 text-[10px] leading-relaxed text-muted-foreground sm:text-xs">
+              <DialogDescription className="mt-1 text-[10px] leading-snug text-muted-foreground">
                 Grant up to ₹20 Lakhs for the top 5 startups, plus investor connect and mentorship.
               </DialogDescription>
 
@@ -116,16 +120,13 @@ export function FundingPopup() {
                   <button type="button" onClick={() => change(false)} className="mt-5 rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground">Close</button>
                 </div>
               ) : !showForm ? (
-                <div className="mt-4 space-y-3">
-                  <ul className="space-y-0.5 text-[10px] leading-relaxed text-muted-foreground sm:space-y-1 sm:text-xs">
+                <div className="mt-2 space-y-2">
+                  <ul className="space-y-0.5 text-[10px] leading-snug text-muted-foreground">
                     <li>• Total non-refundable grant up to <b className="text-foreground">₹20 Lakhs</b></li>
                     <li>• 1st ₹10 Lakhs · 2nd ₹5 Lakhs · 3rd ₹2.5 Lakhs · 4th ₹1.5 Lakhs · 5th ₹1 Lakh</li>
                     <li>• Investor connect, mentorship &amp; business evaluation</li>
                     <li>• Strategic networking, national &amp; global exposure</li>
                   </ul>
-                  <button type="button" onClick={() => setShowForm(true)} className="mt-1 flex w-full items-center justify-center gap-2 rounded-md bg-primary py-2 text-[11px] font-bold uppercase tracking-wide text-primary-foreground transition hover:opacity-90 sm:mt-0 sm:py-2.5 sm:text-xs">
-                    <Rocket className="h-4 w-4" /> Register Now
-                  </button>
                 </div>
               ) : (
                 <div className="mt-5 overflow-hidden rounded-lg border border-border bg-card">

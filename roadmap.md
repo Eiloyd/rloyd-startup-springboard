@@ -1,4 +1,5 @@
 ## In progress
+- [x] Funding popup: 80% poster / 20% compact content; desktop footer offices beside the centered legal text, headings and two address lines
 - [x] Footer Explore section: link to the Funding Programme page (/funding-programme)
 - [x] Funding popup: poster takes 70% and the copy 30% with smaller type, so the poster shows whole; the Zoho form opens across the full popup when Register Now is used
 - [x] Footer: 2mm under the top rule and 2mm row gaps on phones; brand lockup no longer drops below the rule on desktop
