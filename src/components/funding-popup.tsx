@@ -92,7 +92,7 @@ export function FundingPopup() {
                 alt="Riloyd Startup Funding Programme – Grant up to ₹20 Lakhs for the top 5 startups: 1st ₹10 Lakhs, 2nd ₹5 Lakhs, 3rd ₹2.5 Lakhs, 4th ₹1.5 Lakhs, 5th ₹1 Lakh"
                 width={1086}
                 height={1448}
-                className="h-full w-full object-contain sm:w-auto"
+                className="h-full w-full object-contain sm:w-auto sm:max-w-[58vw] lg:max-w-none"
               />
               <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-background/80 px-2.5 py-1 text-[10px] font-medium text-muted-foreground sm:hidden">
                 Tap to close
