@@ -7,6 +7,14 @@ import americaLogo from "@/assets/local/regions/riloyd-america-transparent.png.o
 import singaporeLogo from "@/assets/local/regions/riloyd-singapore-transparent.png.optimized.webp";
 import europeLogo from "@/assets/local/regions/riloyd-europe-transparent.png.optimized.webp";
 import australiaLogo from "@/assets/local/regions/riloyd-australia-transparent.png.optimized.webp";
+import indiaLogoLightTheme from "@/assets/local/regions/riloyd-india-transparent-light-theme.webp";
+import canadaLogoLightTheme from "@/assets/local/regions/riloyd-canada-transparent-light-theme.webp";
+import americaLogoLightTheme from "@/assets/local/regions/riloyd-america-transparent-light-theme.webp";
+import britainLogoDarkTheme from "@/assets/local/regions/riloyd-britain-transparent-dark-theme.webp";
+import uaeLogoDarkTheme from "@/assets/local/regions/riloyd-uae-transparent-dark-theme.webp";
+import singaporeLogoDarkTheme from "@/assets/local/regions/riloyd-singapore-transparent-dark-theme.webp";
+import europeLogoDarkTheme from "@/assets/local/regions/riloyd-europe-transparent-dark-theme.webp";
+import australiaLogoDarkTheme from "@/assets/local/regions/riloyd-australia-transparent-dark-theme.webp";
 import indiaImageAsset from "@/assets/local/global-india.jpg.optimized.webp";
 const indiaImage = indiaImageAsset;
 import britainImageAsset from "@/assets/local/global-britain.jpg.optimized.webp";
@@ -33,6 +41,7 @@ export type MarketConfig = {
   introduction: string;
   image: StaticImageData;
   logo: string;
+  logoAlt: string;
   logoTone: "light" | "dark";
   landmark: string;
   opportunities: [string, string][];
