@@ -118,16 +118,16 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1380px] sm:grid sm:grid-cols-[auto_1fr_auto] sm:items-start sm:gap-3 sm:text-[7.5px] sm:[&_p]:whitespace-nowrap sm:[&_h3]:text-[7.5px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)_minmax(0,1fr)] lg:text-[10px] lg:[&_h3]:text-[10px]">
         <div className="hidden text-left sm:block">
           <h3 className="text-[10px] font-bold text-foreground">Registered Office</h3>
-          <p className="mt-2">Rishishwar Industry Pvt. Ltd., Mahadaji Nagar, Lashkar,</p><p className="mt-2">Gird, Gwalior, Madhya Pradesh &ndash; 474001</p>
+          <p className="mt-1">Rishishwar Industry Pvt. Ltd., Mahadaji Nagar, Lashkar,</p><p className="mt-1">Gird, Gwalior, Madhya Pradesh &ndash; 474001</p>
         </div>
         <div>
           <p>© {new Date().getFullYear()} RILOYD. All rights reserved by RISHISHWAR INDUSTRY PRIVATE LIMITED.</p>
-          <p className="mt-2">Riloyd &mdash; a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED</p>
-          <p className="mt-2">CIN Number: U85500MP2023PTC068770</p>
+          <p className="mt-1">Riloyd &mdash; a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED</p>
+          <p className="mt-1">CIN Number: U85500MP2023PTC068770</p>
         </div>
         <div className="hidden text-right sm:block">
           <h3 className="text-[10px] font-bold text-foreground">Corporate Office</h3>
-          <p className="mt-2">Gincube Center, Motimal, Lashkar, Gird,</p><p className="mt-2">Gwalior &ndash; 474009</p>
+          <p className="mt-1">Gincube Center, Motimal, Lashkar, Gird,</p><p className="mt-1">Gwalior &ndash; 474009</p>
         </div>
       </div>
     </div>
