@@ -220,9 +220,9 @@ function FundingProgramme() {
 
       <Section kicker="Non-Refundable Grant Pool" title={<>Up to <span className="text-primary">₹20 Lakhs</span> for the top five</>} intro="Shared by the five top-performing startups. Grant ≠ investment." tone="surface" compact>
         <div className="grid gap-4 md:grid-cols-[.8fr_1.2fr] md:items-stretch">
-          <img src={posterAsset} alt="Riloyd Startup Funding Programme poster with the five winning grant tiers" width={1088} height={1456} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[36vh] w-full rounded-lg border border-border object-contain md:h-full md:max-h-[430px] md:object-cover md:object-top" />
+          <img src={posterAsset} alt="Riloyd Startup Funding Programme poster with the five winning grant tiers" width={1088} height={1456} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[36vh] w-full rounded-lg border border-border object-contain md:h-full md:max-h-[290px] lg:max-h-[430px] md:object-cover md:object-top" />
           <div className="flex flex-col">
-            <div className="grid flex-1 grid-cols-2 gap-2.5">
+            <div className="grid flex-1 grid-cols-2 gap-2.5 md:gap-2">
               {tiers.map(([rank, amount]) => (
                 <div key={rank} className="flex flex-col justify-center rounded-md border border-border bg-background px-5 py-4 md:py-3 lg:py-4 transition hover:-translate-y-0.5 hover:border-primary/60"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{rank} Startup</p><p className="mt-1 whitespace-nowrap text-lg font-black sm:text-2xl">{amount}</p><p className="text-[11px] text-muted-foreground">Non-refundable grant</p></div>
               ))}
