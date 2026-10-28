@@ -57,3 +57,6 @@
 - [x] Summit popup uses the existing Zoho registration form; submissions remain in Zoho
 - [x] Footer: fourth email idea@riloyd.in in 2 columns; desktop offices moved into the copyright strip (Registered left, Corporate right, 2 lines each)
 - [x] Funding page: softened photo glare for eye comfort; grant section height cut ~25% (desktop 973->695, tablet 677->501, phone 1215->919)
+
+- [x] Footer: leave a 5mm gap between footer text and the border lines (text currently sits too close to them)
+- [x] Contact page: "Get in touch" contact entries laid out in 2 columns
