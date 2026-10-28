@@ -140,9 +140,9 @@ function Index() {
           {services.map(({ icon: Icon, title, slug, copy }) => (
             <article key={title} className="service-item min-w-0 border-border odd:border-r sm:border-r xl:last:border-r-0">
               <Link to="/services/$slug" params={{ slug }} aria-label={`Learn more about ${title}`} className="flex h-[189px] min-w-0 flex-col items-start justify-center px-3 py-4 transition-colors hover:bg-surface sm:px-4 xl:px-3">
-                <Icon className="shrink-0 text-primary" size={23} strokeWidth={1.7} />
-                <h2 className="mt-3 min-w-0 text-[11px] font-extrabold leading-tight sm:text-xs">{title}</h2>
-                <p className="mt-1.5 line-clamp-2 text-[10px] leading-relaxed text-muted-foreground">{copy}</p>
+                <Icon className="shrink-0 text-primary" size={26} strokeWidth={1.7} />
+                <h2 className="mt-3 min-w-0 text-[13px] font-extrabold leading-tight sm:text-sm lg:text-[15px]">{title}</h2>
+                <p className="mt-1.5 line-clamp-2 text-[11px] leading-relaxed text-muted-foreground sm:text-xs lg:text-[13px]">{copy}</p>
                 <ArrowRight size={14} className="ml-auto hidden shrink-0 text-primary lg:block" />
               </Link>
             </article>
