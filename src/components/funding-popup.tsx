@@ -83,7 +83,7 @@ export function FundingPopup() {
             <div className="bg-background">
               <img decoding="async"
                 src={posterAsset}
-                alt="Riloyd Startup Funding Programme – Grant up to ₹22.5 Lakhs for the top 3 startups: 1st ₹10 Lakhs, 2nd ₹7.5 Lakhs, 3rd ₹5 Lakhs"
+                alt="Riloyd Startup Funding Programme – Grant up to ₹20 Lakhs for the top 5 startups: 1st ₹10 Lakhs, 2nd ₹5 Lakhs, 3rd ₹2.5 Lakhs, 4th ₹1.5 Lakhs, 5th ₹1 Lakh"
                 width={1086}
                 height={1448}
                 className="h-full w-full object-cover"
@@ -97,7 +97,7 @@ export function FundingPopup() {
                 Apply Your <span className="text-primary">Startup</span> Now
               </DialogTitle>
               <DialogDescription className="mt-1 text-sm text-muted-foreground">
-                Grant up to ₹22.5 Lakhs for the top 3 startups, plus investor connect and mentorship.
+                Grant up to ₹20 Lakhs for the top 5 startups, plus investor connect and mentorship.
               </DialogDescription>
 
               {code ? (
@@ -110,8 +110,8 @@ export function FundingPopup() {
               ) : !showForm ? (
                 <div className="mt-6 space-y-4">
                   <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Total non-refundable grant up to <b className="text-foreground">₹22.5 Lakhs</b></li>
-                    <li>• 1st ₹10 Lakhs · 2nd ₹7.5 Lakhs · 3rd ₹5 Lakhs</li>
+                    <li>• Total non-refundable grant up to <b className="text-foreground">₹20 Lakhs</b></li>
+                    <li>• 1st ₹10 Lakhs · 2nd ₹5 Lakhs · 3rd ₹2.5 Lakhs · 4th ₹1.5 Lakhs · 5th ₹1 Lakh</li>
                     <li>• Investor connect, mentorship &amp; business evaluation</li>
                     <li>• Strategic networking, national &amp; global exposure</li>
                   </ul>
