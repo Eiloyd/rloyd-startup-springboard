@@ -88,10 +88,10 @@ const services = [
 ];
 
 const stats = [
-  ["100+", "Businesses Advised"],
-  ["₹500Cr+", "Funding Enabled"],
-  ["3X", "Average Growth"],
-  ["10+", "Industries Served"],
+  ["₹150Cr+", "Funding Enabled"],
+  ["15+", "Industries Served"],
+  ["75+", "Businesses Advised"],
+  ["200+", "Startup Ideas Analyzed"],
 ];
 
 const strengths = [
