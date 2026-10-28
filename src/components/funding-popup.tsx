@@ -71,7 +71,7 @@ export function FundingPopup() {
   return (
     <>
       <Dialog open={open} onOpenChange={change}>
-        <DialogContent className="max-h-[64vh] w-[86vw] max-w-sm overflow-y-auto border-primary/30 bg-background p-0 sm:rounded-xl sm:max-h-[88vh] sm:w-[92vw] sm:w-auto sm:max-w-[92vw] [&>button]:hidden">
+        <DialogContent className="max-h-[64vh] w-[86vw] max-w-sm overflow-y-auto border-primary/30 bg-background p-0 sm:rounded-xl sm:max-h-[88vh] sm:w-[92vw] sm:max-w-4xl [&>button]:hidden">
           <button
             type="button"
             onClick={() => change(false)}
