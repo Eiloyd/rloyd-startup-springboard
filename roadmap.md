@@ -1,5 +1,6 @@
 ## In progress
-- [ ] Footer: show CIN Number U85500MP2023PTC068770 below the "Riloyd — a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED" line
+- [x] Footer: show CIN Number U85500MP2023PTC068770 below the "Riloyd — a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED" line
+- [ ] About page "Who We Are" section: on mobile the photo should stay as the section background, not appear as a separate image below the text
 - [x] Funding popup: smaller on mobile (86% width / ~59% height, no internal scroll) and tapping the poster closes it, so visitors can explore the site
 - [x] Funding programme page at /funding-programme: content from rishishwarindustry.in/funding-programme laid out in Riloyd's theme (source photos returned 404, so local Riloyd visuals are used; grant amounts follow the user's latest ₹20 Lakhs / five-tier instruction)
 - [x] Summit popup poster: five prize tiers (1st ₹10L, 2nd ₹5L, 3rd ₹2.5L, 4th ₹1.5L, 5th ₹1L, total ₹20L) — repaired mis-numbered trophy rank labels
