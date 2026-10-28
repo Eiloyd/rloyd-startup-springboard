@@ -93,7 +93,7 @@ export function FundingPopup() {
                 height={1448}
                 className="max-h-[22vh] w-full object-contain md:h-full md:max-h-none md:object-cover"
               />
-              <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-background/80 px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
+              <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-background/80 px-2.5 py-1 text-[10px] font-medium text-muted-foreground md:hidden">
                 Tap to close
               </span>
             </button>
