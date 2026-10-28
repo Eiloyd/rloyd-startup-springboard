@@ -18,18 +18,22 @@ import {
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import posterAsset from "@/assets/local/funding-programme-poster.webp";
-import pitchAsset from "@/assets/local/funding-pitch-stage.webp";
 import mentorAsset from "@/assets/local/funding-mentorship.webp";
 import gwaliorAsset from "@/assets/local/funding-gwalior.webp";
-import stageAsset from "@/assets/local/summit-stage-india.webp";
-import networkingAsset from "@/assets/local/summit-networking-india.webp";
 import prototypeAsset from "@/assets/local/summit-prototype-india.webp";
-import investorAsset from "@/assets/local/funding-investor-deal.webp";
 import stayAsset from "@/assets/local/free-stay.webp";
 import foodAsset from "@/assets/local/free-food.webp";
 import travelAsset from "@/assets/local/free-travel.webp";
 import localAsset from "@/assets/local/free-local.webp";
-import { BedDouble, Car, TrainFront, Utensils } from "lucide-react";
+import { BedDouble, Car, Landmark, TrainFront, Utensils } from "lucide-react";
+import gatheringRegistration from "@/assets/local/gathering-registration.webp";
+import gatheringKit from "@/assets/local/gathering-kit.webp";
+import gatheringStage from "@/assets/local/gathering-stage.webp";
+import gatheringPitch from "@/assets/local/gathering-pitch.webp";
+import gatheringExpo from "@/assets/local/gathering-expo.webp";
+import gatheringBadges from "@/assets/local/gathering-badges.webp";
+import gatheringHall from "@/assets/local/gathering-hall.webp";
+import gatheringVideo from "@/assets/videos/riloyd-gathering.mp4.asset.json";
 
 const ZOHOPUBLIC = "https://forms.zohopublic.in/RIPLSTORES/form/StartupIdeaRegistrationForm/formperma/1SNzTjiKwSF14T0BCEyJLvZCZDDowZl3NYWbAjpy1KE";
 
@@ -153,8 +157,8 @@ export const Route = createFileRoute("/funding-programme")({
 function Section({ kicker, title, intro, tone = "plain", children, id, compact = false }: { kicker: string; title: React.ReactNode; intro?: string; tone?: "plain" | "surface"; children: React.ReactNode; id?: string; compact?: boolean }) {
   return (
     <section id={id} className={`scroll-mt-6 border-b border-border ${tone === "surface" ? "bg-surface" : ""}`}>
-      <div className={`mx-auto w-full max-w-[1380px] px-5 sm:px-6 lg:px-12 ${compact ? "py-8 lg:py-11" : "py-14 lg:py-20"}`}>
-        <div className={`mx-auto max-w-3xl text-center ${compact ? "mb-6" : "mb-10"}`}>
+      <div className={`mx-auto w-full max-w-[1380px] px-5 sm:px-6 lg:px-12 ${compact ? "py-8 lg:py-11" : "py-10 lg:py-14"}`}>
+        <div className={`mx-auto max-w-3xl text-center ${compact ? "mb-6" : "mb-7"}`}>
           <p className="eyebrow text-[10px] font-bold uppercase">{kicker}</p>
           <h2 className="mt-3 text-[clamp(1.8rem,3.4vw,3rem)] font-black uppercase leading-[0.95]">{title}</h2>
           {intro && <p className="mt-4 text-sm leading-relaxed text-soft md:text-base">{intro}</p>}
@@ -234,27 +238,29 @@ function FundingProgramme() {
       </Section>
 
       <Section id="prototype" kicker="Ideas get funded too" title={<>Have an idea? <span className="text-primary">Build it.</span></>}>
-        <img src={prototypeAsset} alt="Young Indian founders building a product prototype together" width={1200} height={912} loading="lazy" decoding="async" className="mb-5 h-56 w-full rounded-lg border border-border object-cover sm:h-72 lg:h-80" />
-        <div className="grid gap-5 lg:grid-cols-2">
-          <article className="rounded-lg border border-border bg-surface p-6 sm:p-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Top 20 prototype grant</p>
-            <p className="mt-3 text-3xl font-black sm:text-4xl">₹25,000 – ₹50,000</p>
-            <p className="mt-2 text-sm text-soft">Prototype grant opportunity for the top 20 ideas.</p>
-            <ul className="mt-5 grid grid-cols-2 gap-2">{prototypeUses.map((u) => <li key={u} className="flex items-center gap-2 text-sm"><Check className="shrink-0 text-primary" size={15} />{u}</li>)}</ul>
-            <p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">Idea → Prototype → Validation → Funding</p>
-          </article>
-          <article className="rounded-lg border border-border bg-surface p-6 sm:p-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">₹10,000 idea reward</p>
-            <p className="mt-3 text-3xl font-black sm:text-4xl">25 ideas. ₹10,000 each.</p>
-            <p className="mt-2 text-sm text-soft">A flat ₹10,000 reward for 25 selected ideas — a total reward pool of ₹2.5 Lakhs.</p>
-            <blockquote className="mt-6 border-l-2 border-primary pl-4 text-base italic">“Even early-stage ideas deserve recognition.”</blockquote>
-          </article>
+        <div className="grid gap-4 lg:grid-cols-2 lg:items-stretch">
+          <div className="flex flex-col gap-4">
+            <article className="rounded-lg border border-border bg-surface p-5 sm:p-6">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Top 20 prototype grant</p>
+              <p className="mt-2 text-3xl font-black sm:text-4xl">₹25,000 – ₹50,000</p>
+              <p className="mt-1.5 text-sm text-soft">Prototype grant opportunity for the top 20 ideas.</p>
+              <ul className="mt-4 grid grid-cols-2 gap-2">{prototypeUses.map((u) => <li key={u} className="flex items-center gap-2 text-sm"><Check className="shrink-0 text-primary" size={15} />{u}</li>)}</ul>
+              <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">Idea → Prototype → Validation → Funding</p>
+            </article>
+            <article className="flex-1 rounded-lg border border-primary/40 bg-primary/10 p-5 sm:p-6">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">₹10,000 idea reward</p>
+              <p className="mt-2 text-2xl font-black sm:text-3xl">25 ideas. ₹10,000 each.</p>
+              <p className="mt-1.5 text-sm text-soft">A flat ₹10,000 reward for 25 selected ideas — a total reward pool of ₹2.5 Lakhs.</p>
+              <blockquote className="mt-4 border-l-2 border-primary pl-4 text-sm italic">“Even early-stage ideas deserve recognition.”</blockquote>
+            </article>
+          </div>
+          <img src={prototypeAsset} alt="Young Indian founders building a product prototype together" width={1200} height={912} loading="lazy" decoding="async" className="h-64 w-full rounded-lg border border-border object-cover sm:h-80 lg:h-full" />
         </div>
       </Section>
 
       <Section kicker="Investor Funding Opportunity" title={<>Up to <span className="text-primary">₹5 Crore</span> for investment-ready startups</>} intro="Subject to investor interest, due diligence and applicable terms." tone="surface">
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <img src={investorAsset} alt="Founders shaking hands with investors after a successful pitch" width={1440} height={1094} loading="lazy" decoding="async" className="h-64 w-full rounded-lg border border-border object-cover lg:h-80" />
+          <img src={gatheringExpo} alt="Founders shaking hands with investors after a successful pitch" width={1440} height={1094} loading="lazy" decoding="async" className="h-64 w-full rounded-lg border border-border object-cover lg:h-80" />
           <ol className="space-y-3">{investorSteps.map((s, i) => <li key={s} className="flex items-center gap-4 rounded-md border border-border bg-background px-5 py-3.5"><span className="text-xl font-black text-primary">0{i + 1}</span><span className="text-sm font-bold uppercase tracking-wide">{s}</span></li>)}</ol>
         </div>
       </Section>
@@ -280,7 +286,7 @@ function FundingProgramme() {
             ))}
           </div>
         </div>
-        <p className="eyebrow mt-12 text-center text-[10px] font-bold uppercase">Also included · beyond the summit</p>
+        <p className="eyebrow mt-8 text-center text-[10px] font-bold uppercase">Also included · beyond the summit</p>
         <div className="mt-5 grid gap-3 md:grid-cols-3">
           {included.map(({ icon: Icon, label, value, copy }) => (
             <div key={label} className="rounded-md border border-border bg-background px-5 py-5"><Icon className="text-primary" size={22} strokeWidth={1.7} /><p className="mt-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{label}</p><p className="mt-1 text-2xl font-black">{value}</p><p className="mt-1 text-xs text-muted-foreground">{copy}</p></div>
@@ -300,19 +306,19 @@ function FundingProgramme() {
           </div>
           <div className="flex flex-col overflow-hidden rounded-lg border border-border bg-surface">
             <p className="border-b border-border bg-primary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-primary-foreground">Completely free for selected participants</p>
-            <div className="flex flex-1 flex-col gap-4 p-4">
+            <div className="flex flex-1 flex-col gap-3 p-4">
               <div className="grid grid-cols-5 gap-1 text-center">
                 {freeForSelected.map(([title, note], i) => {
                   const Icon = [BedDouble, Utensils, TrainFront, Car, MapPin][i] ?? MapPin;
                   return <div key={title}><Icon className="mx-auto text-primary" size={24} strokeWidth={1.7} /><p className="mt-1.5 text-[10px] font-extrabold leading-tight sm:text-xs">{title}</p><p className="text-[9px] text-muted-foreground sm:text-[10px]">({note})</p></div>;
                 })}
               </div>
-              <div className="grid min-h-32 flex-1 grid-cols-5 overflow-hidden rounded-md">
+              <div className="grid h-28 grid-cols-5 overflow-hidden rounded-md">
                 {[[stayAsset, "Hotel stay"], [foodAsset, "Indian meals"], [travelAsset, "Train travel"], [localAsset, "Local travel in Gwalior"], [gwaliorAsset, "Gwalior Fort tour"]].map(([src, alt]) => (
-                  <img key={alt} src={src} alt={alt} width={480} height={480} loading="lazy" decoding="async" className="h-full min-h-32 w-full object-cover" />
+                  <img key={alt} src={src} alt={alt} width={480} height={480} loading="lazy" decoding="async" className="h-full w-full object-cover" />
                 ))}
               </div>
-              <div className="mt-auto rounded-md bg-primary/15 px-4 py-3 text-center"><p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Stay · Food · One-side ticket · Local travel · Local tour</p><p className="text-xl font-black">COMPLETELY FREE</p></div>
+              <div className="mt-auto rounded-md bg-primary/15 px-4 py-2.5 text-center"><p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Stay · Food · One-side ticket · Local travel · Local tour</p><p className="text-lg font-black">COMPLETELY FREE</p></div>
               <p className="text-[10px] text-muted-foreground">Subject to policy, eligibility and Terms and Conditions.</p>
             </div>
           </div>
@@ -322,8 +328,8 @@ function FundingProgramme() {
               <p className="flex gap-3"><CalendarDays className="shrink-0 text-primary" size={18} /><span><b>29 – 31 December 2026</b><br /><span className="text-xs text-muted-foreground">3-Day Summit</span></span></p>
               <p className="flex gap-3"><MapPin className="shrink-0 text-primary" size={18} /><b>Gwalior, Madhya Pradesh, India</b></p>
               <p className="flex gap-3"><Check className="shrink-0 text-primary" size={18} /><span>Venue shared with confirmed participants</span></p>
-              <img src={gwaliorAsset} alt="Gwalior Fort at sunset" loading="lazy" decoding="async" className="h-40 w-full flex-1 rounded-md object-cover" />
-              <a href="#register" className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-bold text-primary-foreground">Apply Now <ArrowRight size={16} /></a>
+              <img src={gwaliorAsset} alt="Gwalior Fort at sunset" loading="lazy" decoding="async" className="h-32 w-full rounded-md object-cover" />
+              <a href="#register" className="mt-auto inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-bold text-primary-foreground">Apply Now <ArrowRight size={16} /></a>
             </div>
           </div>
         </div>
@@ -331,7 +337,7 @@ function FundingProgramme() {
 
       <Section kicker="Venue & Eligibility" title={<>Gwalior · <span className="text-primary">29–31 Dec 2026</span></>} tone="surface">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
-          <img src={pitchAsset} alt="A founder pitching on stage at the summit" width={1440} height={821} loading="lazy" decoding="async" className="h-64 w-full rounded-lg border border-border object-cover lg:h-[24rem]" />
+          <img src={gatheringStage} alt="The Riloyd startup gathering stage" width={1440} height={821} loading="lazy" decoding="async" className="h-64 w-full rounded-lg border border-border object-cover lg:h-[24rem]" />
           <div>
             <p className="flex items-start gap-2 text-sm text-soft"><MapPin className="mt-0.5 shrink-0 text-primary" size={16} />Gwalior, Madhya Pradesh, India — venue shared with confirmed participants.</p>
             <p className="mt-2 text-xs text-muted-foreground">Organised by Riloyd, a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED.</p>
@@ -341,11 +347,36 @@ function FundingProgramme() {
         </div>
       </Section>
 
-      <section className="border-b border-border">
-        <div className="grid sm:grid-cols-3">
-          {[[stageAsset,"Pitch on the summit stage"],[networkingAsset,"Network with founders & investors"],[gwaliorAsset,"Three days in historic Gwalior"]].map(([src,label]) => (
-            <figure key={label} className="group relative h-64 overflow-hidden sm:h-80"><img src={src} alt={label} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/70 to-transparent px-5 pb-5 pt-16 text-sm font-extrabold uppercase tracking-wide">{label}</figcaption></figure>
-          ))}
+      <section className="border-b border-border bg-surface">
+        <div className="mx-auto max-w-[1380px] px-5 py-10 sm:px-6 lg:px-12 lg:py-14">
+          <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+            <div><p className="eyebrow text-xs font-bold uppercase">Previous Riloyd Startup Gathering</p><h2 className="mt-2 text-[clamp(1.7rem,3.2vw,2.8rem)] font-black uppercase leading-[0.95]">Moments from <span className="text-primary">our last gathering</span></h2></div>
+            <p className="max-w-md text-sm text-soft">Founders, mentors and investors under one roof — this is what the Riloyd stage looks like.</p>
+          </div>
+          <div className="grid auto-rows-[150px] grid-cols-2 gap-2.5 sm:auto-rows-[180px] md:grid-cols-4">
+            <div className="relative col-span-2 row-span-2 overflow-hidden rounded-lg border border-border bg-background">
+              <video src={gatheringVideo.url} autoPlay muted loop playsInline preload="metadata" poster={gatheringStage} className="h-full w-full object-cover" aria-label="Highlights from the previous Riloyd startup gathering" />
+              <span className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-primary-foreground">● Event highlights</span>
+            </div>
+            {[[gatheringPitch,"Founders pitching on the Riloyd stage"],[gatheringExpo,"Networking across the expo floor"],[gatheringRegistration,"Registration desk"],[gatheringBadges,"Startup, investor & mentor passes"],[gatheringHall,"The main summit hall"],[gatheringKit,"Participant welcome kit"]].map(([src,label], i) => (
+              <figure key={label} className={`group relative overflow-hidden rounded-lg border border-border ${i >= 4 ? "md:col-span-2" : ""}`}><img src={src} alt={label} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/60 to-transparent px-3 pb-2.5 pt-10 text-[11px] font-extrabold uppercase tracking-wide">{label}</figcaption></figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden border-b border-border">
+        <img src={gwaliorAsset} alt="" aria-hidden loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="hero-shade absolute inset-0" />
+        <div className="relative mx-auto grid max-w-[1380px] gap-6 px-5 py-12 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:px-12 lg:py-16">
+          <div>
+            <p className="eyebrow text-xs font-bold uppercase">Host city · Gwalior</p>
+            <h2 className="mt-2 text-[clamp(1.8rem,3.6vw,3.2rem)] font-black uppercase leading-[0.95]">Where heritage meets <span className="text-primary">new ventures</span></h2>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-soft">Three days in the city of the great Gwalior Fort, royal palaces and Tansen's music — a fitting home for founders who want to build something that lasts.</p>
+          </div>
+          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+            {[["Gwalior Fort","The \"pearl among fortresses\" crowning the city"],["Jai Vilas Palace","Royal Scindia heritage"],["City of Music","Home of Tansen & a UNESCO Creative City"],["Heart of MP","Well connected by rail & road"]].map(([t,c]) => <div key={t} className="rounded-md border border-border bg-background/80 p-4"><Landmark className="text-primary" size={20} strokeWidth={1.7} /><p className="mt-2 text-xs font-extrabold uppercase tracking-wide">{t}</p><p className="mt-1 text-[11px] leading-snug text-muted-foreground">{c}</p></div>)}
+          </div>
         </div>
       </section>
 
