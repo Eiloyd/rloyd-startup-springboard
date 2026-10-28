@@ -99,6 +99,9 @@ export function FundingPopup() {
               </span>
             </button>}
             <div className={showForm ? "bg-background p-2.5 sm:p-5" : "min-h-0 overflow-y-auto bg-background p-2 md:p-2.5"}>
+              {!showForm && !code && <Button type="button" onClick={() => setShowForm(true)} className="mb-1 h-7 w-full gap-1 rounded-md px-1 text-[10px] font-bold uppercase">
+                <Rocket className="h-3 w-3" /> Register Now
+              </Button>}
               <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-primary sm:text-[10px]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" /> Registrations Open
               </span>
@@ -118,9 +121,6 @@ export function FundingPopup() {
                 </div>
               ) : !showForm ? (
                 <div className="mt-2 space-y-2">
-                  <Button type="button" onClick={() => setShowForm(true)} className="h-7 w-full gap-1 rounded-md px-1 text-[10px] font-bold uppercase">
-                    <Rocket className="h-3 w-3" /> Register Now
-                  </Button>
                   <ul className="space-y-0.5 text-[10px] leading-snug text-muted-foreground">
                     <li>• Total non-refundable grant up to <b className="text-foreground">₹20 Lakhs</b></li>
                     <li>• 1st ₹10 Lakhs · 2nd ₹5 Lakhs · 3rd ₹2.5 Lakhs · 4th ₹1.5 Lakhs · 5th ₹1 Lakh</li>
