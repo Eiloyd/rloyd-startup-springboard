@@ -1,12 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import type { Session } from "@supabase/supabase-js";
 import { useServerFn } from "@tanstack/react-start";
-import { Download, FileCheck, FileText, Search } from "lucide-react";
+import { Download, FileCheck, FileText, Lock, Search } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { AuthForm } from "@/components/auth-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { findReport } from "@/lib/reports.functions";
 import { reportCategories } from "@/lib/report-schemas";
+
+function useSession() {
+  const [session, setSession] = useState<Session | null>(null);
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => setSession(s));
+    supabase.auth.getSession().then(({ data }) => { setSession(data.session); setReady(true); });
+    return () => sub.subscription.unsubscribe();
+  }, []);
+  return { session, ready };
+}
 
 export const Route = createFileRoute("/downloads")({
   head: () => ({ meta: [
@@ -19,6 +33,7 @@ export const Route = createFileRoute("/downloads")({
 });
 
 function DownloadsPage() {
+  const { session, ready } = useSession();
   const lookup = useServerFn(findReport);
   const [reportNumber, setNumber] = useState(""); const [publishDate, setDate] = useState("");
   const [result, setResult] = useState<{ title: string; name: string; url: string } | null>(null);
@@ -35,6 +50,13 @@ function DownloadsPage() {
     <div className="mx-auto max-w-[1100px]">
       <p className="eyebrow text-xs font-bold uppercase">Riloyd documents</p>
       <h1 className="mt-4 text-4xl font-black uppercase sm:text-5xl">Downloads</h1>
+      {!ready ? null : !session ? (
+        <div className="mt-10 max-w-xl border border-border bg-surface p-6 sm:p-8">
+          <div className="flex items-center gap-3"><Lock className="text-primary" size={22} /><p className="font-extrabold">Sign in to download reports</p></div>
+          <p className="mt-2 text-sm text-muted-foreground">Report downloads are available to registered members only. Sign in, then enter your report number and publish date.</p>
+          <AuthForm redirectPath="/downloads" />
+        </div>
+      ) : (
       <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.2fr]">
         <div>
           <h2 className="text-2xl font-bold">Your business reports</h2>
@@ -55,6 +77,7 @@ function DownloadsPage() {
           {result && <div className="mt-8 border-t border-border pt-6"><h3 className="flex items-center gap-2 font-bold"><FileCheck size={18} className="text-primary" />{result.title}</h3><p className="my-3 break-all text-sm text-muted-foreground">{result.name}</p><Button asChild><a href={result.url}><Download size={16} /> Download report</a></Button></div>}
         </div>
       </div>
+      )}
     </div>
   </main>;
 }
