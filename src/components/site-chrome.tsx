@@ -82,10 +82,10 @@ export function SiteFooter() {
       <div className="order-2 col-span-2 sm:col-span-2 xl:col-span-1"><h2 className="text-xs font-bold">Explore</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/contact">Contact</Link><Link to="/register">Register</Link><Link to="/funding-programme">Funding Programme</Link></div></div>
       <div className="order-3 col-span-2 sm:col-span-2 xl:col-span-1"><h2 className="text-xs font-bold">Our People</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/investors">Our Investors</Link><Link to="/mentors">Our Mentors</Link><Link to="/team">Our Team Members</Link><Link to="/startups">Our Startups</Link><Link to="/businesses">Our Businesses</Link></div></div>
       <div className="order-4 col-span-2 row-span-2 sm:col-span-2 sm:row-span-1 xl:col-span-1"><h2 className="text-xs font-bold">About Us</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground">{aboutLinks.map((l) => <Link key={l.hash} to="/about" hash={l.hash}>{l.label}</Link>)}</div></div>
-      <div className="contents sm:order-last sm:col-span-2 sm:block sm:min-w-0 xl:order-none xl:col-start-2 xl:col-span-4 xl:row-start-2">
+      <div className="contents sm:order-last sm:col-span-2 sm:block sm:min-w-0 xl:contents">
         <Link to="/global-presence" aria-label="Explore Riloyd Global presence" className="order-5 col-span-4 self-start sm:hidden"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" loading="lazy" className="h-12 w-auto max-w-full object-contain object-left" decoding="async" /></Link>
         <div className="order-6 col-span-6 sm:hidden"><h2 className="text-xs font-bold">Global Presence</h2><div className="mt-3 grid grid-cols-4 gap-x-2 gap-y-1.5 text-xs text-muted-foreground">{marketOrder.map((key) => { const market = marketConfigs[key]; return <Link key={key} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}</div></div>
-      <div className="order-9 col-span-6 text-xs leading-relaxed text-muted-foreground sm:mt-5">
+      <div className="order-9 col-span-6 text-xs leading-relaxed text-muted-foreground sm:mt-5 xl:col-start-5 xl:col-span-2 xl:row-start-1">
         <h2 className="text-sm font-bold text-foreground">Contact</h2>
         <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1 text-[11px] [&>a]:whitespace-nowrap xl:text-[10.5px]">
           <a className="font-medium text-foreground hover:underline" href="mailto:info@riloyd.in">info@riloyd.in</a>
@@ -105,7 +105,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-4 flex items-center gap-2"><a className="social-link" href="https://www.linkedin.com/company/145354558" target="_blank" rel="noopener noreferrer" aria-label="Riloyd on LinkedIn"><Linkedin className="h-4 w-4" aria-hidden="true" /></a><a className="social-link" href="https://www.instagram.com/riloyd.in/" target="_blank" rel="noopener noreferrer" aria-label="Riloyd on Instagram"><Instagram className="h-4 w-4" aria-hidden="true" /></a></div>
       </div>
-        <div className="hidden sm:mt-5 sm:block sm:min-w-0">
+        <div className="hidden sm:mt-5 sm:block sm:min-w-0 xl:col-start-2 xl:col-span-4 xl:row-start-2">
           <div className="flex items-center gap-2">
             <Link to="/global-presence" aria-label="Explore Riloyd Global presence" className="block shrink-0"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" loading="lazy" className="h-7 w-auto max-w-[130px] object-contain object-left" decoding="async" /></Link>
             <h2 className="text-xs font-bold text-foreground">Global Presence</h2>
