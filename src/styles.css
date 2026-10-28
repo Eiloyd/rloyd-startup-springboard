@@ -267,3 +267,9 @@
 .logo-tone-dark { filter: brightness(0) invert(1); }
 .light .logo-tone-dark { filter: none; }
 .light .logo-tone-light { filter: brightness(0); }
+
+/* White card surfaces: supporting text reads black, not grey. */
+.bg-card {
+  --muted-foreground: var(--card-foreground);
+  --soft: var(--card-foreground);
+}
