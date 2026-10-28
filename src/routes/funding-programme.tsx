@@ -150,11 +150,11 @@ export const Route = createFileRoute("/funding-programme")({
   component: FundingProgramme,
 });
 
-function Section({ kicker, title, intro, tone = "plain", children, id }: { kicker: string; title: React.ReactNode; intro?: string; tone?: "plain" | "surface"; children: React.ReactNode; id?: string }) {
+function Section({ kicker, title, intro, tone = "plain", children, id, compact = false }: { kicker: string; title: React.ReactNode; intro?: string; tone?: "plain" | "surface"; children: React.ReactNode; id?: string; compact?: boolean }) {
   return (
     <section id={id} className={`scroll-mt-6 border-b border-border ${tone === "surface" ? "bg-surface" : ""}`}>
-      <div className="mx-auto w-full max-w-[1380px] px-5 py-14 sm:px-6 lg:px-12 lg:py-20">
-        <div className="mx-auto mb-10 max-w-3xl text-center">
+      <div className={`mx-auto w-full max-w-[1380px] px-5 sm:px-6 lg:px-12 ${compact ? "py-9 lg:py-12" : "py-14 lg:py-20"}`}>
+        <div className={`mx-auto max-w-3xl text-center ${compact ? "mb-6" : "mb-10"}`}>
           <p className="eyebrow text-[10px] font-bold uppercase">{kicker}</p>
           <h2 className="mt-3 text-[clamp(1.8rem,3.4vw,3rem)] font-black uppercase leading-[0.95]">{title}</h2>
           {intro && <p className="mt-4 text-sm leading-relaxed text-soft md:text-base">{intro}</p>}
