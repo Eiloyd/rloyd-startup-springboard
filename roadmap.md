@@ -1,10 +1,10 @@
 ## In progress
 - [ ] Footer: show CIN Number U85500MP2023PTC068770 below the "Riloyd — a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED" line
-- [ ] Funding popup: smaller on mobile so it does not cover the whole screen, and tapping the popup closes it so visitors can explore the site
-- [ ] Funding programme page: content taken from rishishwarindustry.in/funding-programme, laid out in Riloyd's own theme and logo
-- [ ] Summit popup poster: five prize tiers (1st ₹10L, 2nd ₹5L, 3rd ₹2.5L, 4th ₹1.5L, 5th ₹1L, total ₹20L) — repair mis-numbered trophy rank labels
-- [ ] Mobile footer: put the "RILOYD helps ambitious businesses…" tagline beside the Riloyd logo, ~40% logo / ~60% text
-- [ ] Homepage services section: larger text that fits its boxes
+- [x] Funding popup: smaller on mobile (86% width / ~59% height, no internal scroll) and tapping the poster closes it, so visitors can explore the site
+- [x] Funding programme page at /funding-programme: content from rishishwarindustry.in/funding-programme laid out in Riloyd's theme (source photos returned 404, so local Riloyd visuals are used; grant amounts follow the user's latest ₹20 Lakhs / five-tier instruction)
+- [x] Summit popup poster: five prize tiers (1st ₹10L, 2nd ₹5L, 3rd ₹2.5L, 4th ₹1.5L, 5th ₹1L, total ₹20L) — repaired mis-numbered trophy rank labels
+- [x] Mobile footer: "RILOYD helps ambitious businesses…" tagline beside the Riloyd logo, measured 41% logo / 59% text
+- [x] Homepage services section: larger text that fits its boxes (15px titles, 13px copy in 189px cards)
 - [x] Footer bottom: "Riloyd — a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED" plus email, registered office and corporate office addresses; footer "Email us" now points to info@riloyd.in
 - [x] Save 111 hosted static images as actual local frontend files; replace 74 image imports and verify image loading on 27 public paths, popup and light-theme logos; routing test and build passed
 - [x] Audit 111 hosted images; optimize 33 original pointers and 31 local images, preserve logo pixels/dimensions/transparency, retain already-smaller WebP and verify public image loading
