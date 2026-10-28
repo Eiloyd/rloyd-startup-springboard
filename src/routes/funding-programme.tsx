@@ -303,7 +303,7 @@ function FundingProgramme() {
             <div className="flex flex-1 flex-col gap-4 p-4">
               <div className="grid grid-cols-5 gap-1 text-center">
                 {freeForSelected.map(([title, note], i) => {
-                  const Icon = [BedDouble, Utensils, TrainFront, Car, MapPin][i];
+                  const Icon = [BedDouble, Utensils, TrainFront, Car, MapPin][i] ?? MapPin;
                   return <div key={title}><Icon className="mx-auto text-primary" size={24} strokeWidth={1.7} /><p className="mt-1.5 text-[10px] font-extrabold leading-tight sm:text-xs">{title}</p><p className="text-[9px] text-muted-foreground sm:text-[10px]">({note})</p></div>;
                 })}
               </div>
