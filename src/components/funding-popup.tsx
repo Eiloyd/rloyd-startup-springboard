@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { CheckCircle2, Rocket, X } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import posterAsset from "@/assets/local/funding-programme-poster.webp";
 import {
   fundingApplicationSchema,
@@ -75,7 +76,7 @@ export function FundingPopup() {
             type="button"
             onClick={() => change(false)}
             aria-label="Close"
-            className="absolute right-3 top-3 z-10 rounded-full bg-background/80 p-1.5 text-foreground hover:bg-background"
+            className="absolute right-3 top-3 z-10 block! rounded-full bg-background/80 p-1.5 text-foreground hover:bg-background"
           >
             <X className="h-4 w-4" />
           </button>
@@ -117,9 +118,9 @@ export function FundingPopup() {
                 </div>
               ) : !showForm ? (
                 <div className="mt-2 space-y-2">
-                  <button type="button" onClick={() => setShowForm(true)} className="flex w-full items-center justify-center gap-1 rounded-md bg-primary py-1.5 text-[10px] font-bold uppercase text-primary-foreground transition hover:opacity-90">
+                  <Button type="button" onClick={() => setShowForm(true)} className="h-7 w-full gap-1 rounded-md px-1 text-[10px] font-bold uppercase">
                     <Rocket className="h-3 w-3" /> Register Now
-                  </button>
+                  </Button>
                   <ul className="space-y-0.5 text-[10px] leading-snug text-muted-foreground">
                     <li>• Total non-refundable grant up to <b className="text-foreground">₹20 Lakhs</b></li>
                     <li>• 1st ₹10 Lakhs · 2nd ₹5 Lakhs · 3rd ₹2.5 Lakhs · 4th ₹1.5 Lakhs · 5th ₹1 Lakh</li>
