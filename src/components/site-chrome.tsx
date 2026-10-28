@@ -85,7 +85,19 @@ export function SiteFooter() {
       <div className="contents sm:order-last sm:col-span-2 sm:block sm:min-w-0 xl:contents">
         <Link to="/global-presence" aria-label="Explore Riloyd Global presence" className="order-5 col-span-4 self-start sm:hidden"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" loading="lazy" className="h-12 w-auto max-w-full object-contain object-left" decoding="async" /></Link>
         <div className="order-6 col-span-6 sm:hidden"><h2 className="text-xs font-bold">Global Presence</h2><div className="mt-3 grid grid-cols-4 gap-x-2 gap-y-1.5 text-xs text-muted-foreground">{marketOrder.map((key) => { const market = marketConfigs[key]; return <Link key={key} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}</div></div>
-      <div className="order-9 col-span-6 text-xs leading-relaxed text-muted-foreground sm:mt-5 xl:col-start-5 xl:col-span-2 xl:row-start-1">
+        <div className="hidden sm:mb-1 sm:grid sm:grid-cols-4 sm:items-center sm:gap-x-3 sm:gap-y-1.5 text-xs text-muted-foreground xl:hidden">
+          <h2 className="col-span-4 text-xs font-bold text-foreground">Global Presence</h2>
+          <Link to="/global-presence" aria-label="Explore Riloyd Global presence" style={{ gridColumn: "1 / 3", gridRow: "2 / 4" }} className="block"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" className="h-11 w-full object-contain object-left" decoding="async" /></Link>
+          {marketOrder.map((key, i) => { const market = marketConfigs[key]; const pos = i < 6 ? { gridColumn: String(3 + (i % 2)), gridRow: String(2 + Math.floor(i / 2)) } : { gridColumn: String(i - 5), gridRow: "4" }; return <Link key={key} style={pos} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}
+        </div>
+        <div className="hidden xl:col-start-1 xl:col-span-8 xl:row-start-2 xl:mt-1 xl:block">
+          <div className="flex items-center gap-2">
+            <Link to="/global-presence" aria-label="Explore Riloyd Global presence" className="block shrink-0"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" loading="lazy" className="h-7 w-auto max-w-[130px] object-contain object-left" decoding="async" /></Link>
+            <h2 className="text-xs font-bold text-foreground">Global Presence</h2>
+          </div>
+          <div className="mt-3 grid grid-cols-4 gap-x-4 gap-y-1.5 text-xs text-muted-foreground">{marketOrder.map((key) => { const market = marketConfigs[key]; return <Link key={key} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}</div>
+        </div>
+      <div className="order-9 col-span-6 text-xs leading-relaxed text-muted-foreground sm:mt-5 xl:col-start-7 xl:col-span-2 xl:row-start-1 xl:mt-0">
         <h2 className="text-sm font-bold text-foreground">Contact</h2>
         <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1 text-[11px] [&>a]:whitespace-nowrap xl:text-[10.5px]">
           <a className="font-medium text-foreground hover:underline" href="mailto:info@riloyd.in">info@riloyd.in</a>
@@ -105,13 +117,6 @@ export function SiteFooter() {
         </div>
         <div className="mt-4 flex items-center gap-2"><a className="social-link" href="https://www.linkedin.com/company/145354558" target="_blank" rel="noopener noreferrer" aria-label="Riloyd on LinkedIn"><Linkedin className="h-4 w-4" aria-hidden="true" /></a><a className="social-link" href="https://www.instagram.com/riloyd.in/" target="_blank" rel="noopener noreferrer" aria-label="Riloyd on Instagram"><Instagram className="h-4 w-4" aria-hidden="true" /></a></div>
       </div>
-        <div className="hidden sm:mt-5 sm:block sm:min-w-0 xl:col-start-2 xl:col-span-4 xl:row-start-2">
-          <div className="flex items-center gap-2">
-            <Link to="/global-presence" aria-label="Explore Riloyd Global presence" className="block shrink-0"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" loading="lazy" className="h-7 w-auto max-w-[130px] object-contain object-left" decoding="async" /></Link>
-            <h2 className="text-xs font-bold text-foreground">Global Presence</h2>
-          </div>
-          <div className="mt-3 grid grid-cols-4 gap-x-4 gap-y-1.5 text-xs text-muted-foreground">{marketOrder.map((key) => { const market = marketConfigs[key]; return <Link key={key} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}</div>
-        </div>
       </div>
       <div className="order-7 col-span-3 sm:order-5 sm:col-span-2 xl:col-span-1"><h2 className="text-xs font-bold">Our Services</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground">{serviceOrder.map((key) => { const service = serviceConfigs[key]; return service ? <Link key={key} to="/services/$slug" params={{ slug: service.slug }}>{service.shortTitle}</Link> : null; })}</div></div>
       <div className="order-8 col-span-3 sm:order-6 sm:col-span-2 xl:col-span-1"><h2 className="text-xs font-bold">Downloads</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/research" className="font-medium text-foreground">Our Research &amp; Analysis</Link><Link to="/downloads">Business Valuation Reports</Link><Link to="/downloads">Business Reports &amp; Documents</Link><Link to="/downloads">All Reports</Link><p className="text-[10px] leading-relaxed text-muted-foreground/80">Use the report number and publish date to download.</p></div></div>
