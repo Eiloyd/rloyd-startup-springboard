@@ -77,6 +77,7 @@ function DownloadsPage() {
           {result && <div className="mt-8 border-t border-border pt-6"><h3 className="flex items-center gap-2 font-bold"><FileCheck size={18} className="text-primary" />{result.title}</h3><p className="my-3 break-all text-sm text-muted-foreground">{result.name}</p><Button asChild><a href={result.url}><Download size={16} /> Download report</a></Button></div>}
         </div>
       </div>
+      )}
     </div>
   </main>;
 }
