@@ -139,15 +139,21 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-background">
-        <div className="mx-auto grid max-w-[1380px] lg:grid-cols-[.9fr_1.1fr]">
+      <section className="relative isolate overflow-hidden border-b border-border bg-background">
+        <div className="absolute inset-0 lg:hidden">
+          <img src={leadershipImage} width={1600} height={900} loading="lazy" alt="Business leader considering a city growth strategy" className="absolute inset-0 h-full w-full object-cover object-center" decoding="async" />
+          <div className="about-image-shade absolute inset-0" />
+          <div className="absolute inset-0 bg-background/80" />
+          <ImageBrand />
+        </div>
+        <div className="relative z-10 mx-auto grid max-w-[1380px] lg:grid-cols-[.9fr_1.1fr]">
           <div className="flex flex-col justify-center px-5 py-14 sm:px-6 lg:px-12 lg:py-20">
             <p className="eyebrow text-[10px] font-bold uppercase text-soft">Who we are</p>
             <h2 className="mt-4 text-3xl font-black uppercase leading-[.98] sm:text-5xl">More than consultants. <span className="text-primary">Partners in better decisions.</span></h2>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">We look beyond an isolated problem to understand the business around it—its ambitions, economics, market realities and ability to execute. That wider view helps us provide advice that is commercially grounded, connected and useful.</p>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">Our role is to help leadership teams ask sharper questions, evaluate choices with confidence and turn the right decisions into forward movement.</p>
           </div>
-          <div className="relative min-h-[410px] lg:min-h-[560px]"><img src={leadershipImage} width={1600} height={900} loading="lazy" alt="Business leader considering a city growth strategy" className="absolute inset-0 h-full w-full object-cover object-center" decoding="async" /><div className="about-image-shade absolute inset-0" /><ImageBrand /></div>
+          <div className="relative hidden min-h-[560px] lg:block"><img src={leadershipImage} width={1600} height={900} loading="lazy" alt="Business leader considering a city growth strategy" className="absolute inset-0 h-full w-full object-cover object-center" decoding="async" /><div className="about-image-shade absolute inset-0" /><ImageBrand /></div>
         </div>
       </section>
 
