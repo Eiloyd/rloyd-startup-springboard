@@ -142,7 +142,7 @@
 .light {
   --background: oklch(0.978 0.003 80);
   --foreground: oklch(0.16 0.005 40);
-  --soft: oklch(0.39 0.005 40);
+  --soft: oklch(0.16 0.005 40);
   --surface: oklch(0.94 0.004 80);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.16 0.005 40);
@@ -153,7 +153,7 @@
   --secondary: oklch(0.925 0.005 80);
   --secondary-foreground: oklch(0.16 0.005 40);
   --muted: oklch(0.925 0.005 80);
-  --muted-foreground: oklch(0.39 0.005 40);
+  --muted-foreground: oklch(0.16 0.005 40);
   --accent: oklch(0.925 0.005 80);
   --accent-foreground: oklch(0.16 0.005 40);
   --border: oklch(0.81 0.005 80);
@@ -261,3 +261,9 @@
 .global-cta-shade { background: linear-gradient(90deg, oklch(0.03 0 0 / .95), oklch(0.03 0 0 / .5)); }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+/* Country logos carry either a light or a dark artwork; keep whichever theme is
+   active readable by inverting only the mismatched tone. */
+.logo-tone-dark { filter: invert(1) hue-rotate(180deg); }
+.light .logo-tone-dark { filter: none; }
+.light .logo-tone-light { filter: invert(1) hue-rotate(180deg); }
