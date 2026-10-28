@@ -350,14 +350,15 @@ function FundingProgramme() {
                 <Rocket size={16} /> Open Registration Form <ArrowRight size={16} />
               </a>
               <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-                The form opens in a new window. You can also fill it in below without leaving this page.
+                The form opens in a new window so every field and the submit button are fully visible.
+                The preview below shows the same form on this page — scroll inside it to fill it in here.
               </p>
             </div>
             <div className="overflow-hidden rounded-lg border border-border bg-card">
               <iframe
                 title="Startup Idea Registration Form"
                 src={ZOHOPUBLIC}
-                className="block h-[2600px] w-full border-0"
+                className="block h-[85vh] w-full border-0"
                 loading="lazy"
               />
             </div>
