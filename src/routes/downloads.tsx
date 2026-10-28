@@ -33,6 +33,7 @@ export const Route = createFileRoute("/downloads")({
 });
 
 function DownloadsPage() {
+  const { session, ready } = useSession();
   const lookup = useServerFn(findReport);
   const [reportNumber, setNumber] = useState(""); const [publishDate, setDate] = useState("");
   const [result, setResult] = useState<{ title: string; name: string; url: string } | null>(null);
