@@ -142,7 +142,7 @@ const TOTAL = 10;
 
 function Slide({ n, kicker, title, tone = "plain", children, id }: { n: number; kicker: string; title: React.ReactNode; tone?: "plain" | "surface"; children: React.ReactNode; id?: string }) {
   return (
-    <section id={id} className={`relative border-b border-border lg:min-h-[100svh] lg:flex lg:items-center ${tone === "surface" ? "bg-surface" : ""}`}>
+    <section id={id} className={`relative border-b border-border ${tone === "surface" ? "bg-surface" : ""}`}>
       <div className="mx-auto w-full max-w-[1380px] px-5 py-10 sm:px-6 lg:px-12 lg:py-12">
         <div className="mb-6 flex items-end justify-between gap-4 border-b border-border pb-4">
           <div>

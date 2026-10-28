@@ -86,13 +86,13 @@ export function SiteFooter() {
         <Link to="/global-presence" aria-label="Explore Riloyd Global presence" className="order-5 col-span-4 self-start sm:hidden"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" loading="lazy" className="h-12 w-auto max-w-full object-contain object-left" decoding="async" /></Link>
         <div className="hidden sm:mb-1 sm:grid sm:grid-cols-4 sm:items-center sm:gap-x-3 sm:gap-y-1.5 text-xs text-muted-foreground">
           <h2 className="col-span-4 text-xs font-bold text-foreground">Global Presence</h2>
-          <Link to="/global-presence" aria-label="Explore Riloyd Global presence" style={{ gridColumn: "1 / 3", gridRow: "2 / 4" }} className="block"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" loading="lazy" className="h-10 w-auto max-w-full object-contain object-left" decoding="async" /></Link>
+          <Link to="/global-presence" aria-label="Explore Riloyd Global presence" style={{ gridColumn: "1 / 3", gridRow: "2 / 4" }} className="block"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" className="h-11 w-full object-contain object-left" decoding="async" /></Link>
           {marketOrder.map((key, i) => { const market = marketConfigs[key]; const pos = i < 6 ? { gridColumn: String(3 + (i % 2)), gridRow: String(2 + Math.floor(i / 2)) } : { gridColumn: String(i - 5), gridRow: "4" }; return <Link key={key} style={pos} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}
         </div>
         <div className="order-6 col-span-6 sm:hidden"><h2 className="text-xs font-bold">Global Presence</h2><div className="mt-3 grid grid-cols-4 gap-x-2 gap-y-1.5 text-xs text-muted-foreground">{marketOrder.map((key) => { const market = marketConfigs[key]; return <Link key={key} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}</div></div>
       <div className="order-9 col-span-6 text-xs leading-relaxed text-muted-foreground sm:mt-5">
         <h2 className="text-sm font-bold text-foreground">Contact</h2>
-        <div className="mt-3 grid grid-cols-3 gap-x-3 gap-y-1 [&>a]:min-w-0 [&>a]:break-all">
+        <div className="mt-3 grid grid-cols-3 gap-x-2 gap-y-1 text-[11px] [&>a]:whitespace-nowrap xl:text-[10.5px]">
           <a className="font-medium text-foreground hover:underline" href="mailto:info@riloyd.in">info@riloyd.in</a>
           <a className="font-medium text-foreground hover:underline" href="mailto:business@riloyd.in">business@riloyd.in</a>
           <a className="font-medium text-foreground hover:underline" href="mailto:careers@riloyd.in">careers@riloyd.in</a>
