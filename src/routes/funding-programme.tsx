@@ -219,9 +219,9 @@ function FundingProgramme() {
           <div className="flex flex-col">
             <div className="grid flex-1 grid-cols-2 gap-3">
               {tiers.map(([rank, amount]) => (
-                <div key={rank} className="flex flex-col justify-center rounded-md border border-border bg-background px-5 py-6 transition hover:-translate-y-0.5 hover:border-primary/60"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{rank} Startup</p><p className="mt-1 text-2xl font-black sm:text-3xl">{amount}</p><p className="text-[11px] text-muted-foreground">Non-refundable grant</p></div>
+                <div key={rank} className="flex flex-col justify-center rounded-md border border-border bg-background px-5 py-6 transition hover:-translate-y-0.5 hover:border-primary/60"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{rank} Startup</p><p className="mt-1 whitespace-nowrap text-xl font-black sm:text-3xl">{amount}</p><p className="text-[11px] text-muted-foreground">Non-refundable grant</p></div>
               ))}
-              <div className="flex flex-col justify-center rounded-md border border-primary/40 bg-primary/10 px-5 py-6"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Total</p><p className="mt-1 text-2xl font-black sm:text-3xl">₹20 Lakhs</p><p className="text-[11px] text-muted-foreground">Across five startups</p></div>
+              <div className="flex flex-col justify-center rounded-md border border-primary/40 bg-primary/10 px-5 py-6"><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Total</p><p className="mt-1 whitespace-nowrap text-xl font-black sm:text-3xl">₹20 Lakhs</p><p className="text-[11px] text-muted-foreground">Across five startups</p></div>
             </div>
             <p className="mt-5 text-xs leading-relaxed text-muted-foreground">Subject to eligibility, evaluation, selection and Terms &amp; Conditions.</p>
           </div>
