@@ -1,12 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import type { Session } from "@supabase/supabase-js";
 import { useServerFn } from "@tanstack/react-start";
-import { Download, FileCheck, FileText, Search } from "lucide-react";
+import { Download, FileCheck, FileText, Lock, Search } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { AuthForm } from "@/components/auth-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { findReport } from "@/lib/reports.functions";
 import { reportCategories } from "@/lib/report-schemas";
+
+function useSession() {
+  const [session, setSession] = useState<Session | null>(null);
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => setSession(s));
+    supabase.auth.getSession().then(({ data }) => { setSession(data.session); setReady(true); });
+    return () => sub.subscription.unsubscribe();
+  }, []);
+  return { session, ready };
+}
 
 export const Route = createFileRoute("/downloads")({
   head: () => ({ meta: [
