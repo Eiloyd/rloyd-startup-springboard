@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DownloadsRouteImport } from './routes/downloads'
+import { Route as FundingProgrammeRouteImport } from './routes/funding-programme'
 import { Route as GlobalPresenceRouteImport } from './routes/global-presence'
 import { Route as BusinessesIndexRouteImport } from './routes/businesses.index'
 import { Route as BusinessesSlugRouteImport } from './routes/businesses.$slug'
@@ -57,6 +58,11 @@ const ContactRoute = ContactRouteImport.update({
 const DownloadsRoute = DownloadsRouteImport.update({
   id: '/downloads',
   path: '/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FundingProgrammeRoute = FundingProgrammeRouteImport.update({
+  id: '/funding-programme',
+  path: '/funding-programme',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GlobalPresenceRoute = GlobalPresenceRouteImport.update({
@@ -161,6 +167,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/contact': typeof ContactRoute
   '/downloads': typeof DownloadsRoute
+  '/funding-programme': typeof FundingProgrammeRoute
   '/global-presence': typeof GlobalPresenceRouteWithChildren
   '/businesses/$slug': typeof BusinessesSlugRoute
   '/global-presence/$slug': typeof GlobalPresenceSlugRoute
@@ -187,6 +194,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/contact': typeof ContactRoute
   '/downloads': typeof DownloadsRoute
+  '/funding-programme': typeof FundingProgrammeRoute
   '/global-presence': typeof GlobalPresenceRouteWithChildren
   '/businesses/$slug': typeof BusinessesSlugRoute
   '/global-presence/$slug': typeof GlobalPresenceSlugRoute
@@ -214,6 +222,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/contact': typeof ContactRoute
   '/downloads': typeof DownloadsRoute
+  '/funding-programme': typeof FundingProgrammeRoute
   '/global-presence': typeof GlobalPresenceRouteWithChildren
   '/businesses/$slug': typeof BusinessesSlugRoute
   '/global-presence/$slug': typeof GlobalPresenceSlugRoute
@@ -242,6 +251,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/contact'
     | '/downloads'
+    | '/funding-programme'
     | '/global-presence'
     | '/businesses/$slug'
     | '/global-presence/$slug'
@@ -268,6 +278,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/contact'
     | '/downloads'
+    | '/funding-programme'
     | '/global-presence'
     | '/businesses/$slug'
     | '/global-presence/$slug'
@@ -294,6 +305,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/contact'
     | '/downloads'
+    | '/funding-programme'
     | '/global-presence'
     | '/businesses/$slug'
     | '/global-presence/$slug'
@@ -321,6 +333,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   ContactRoute: typeof ContactRoute
   DownloadsRoute: typeof DownloadsRoute
+  FundingProgrammeRoute: typeof FundingProgrammeRoute
   GlobalPresenceRoute: typeof GlobalPresenceRouteWithChildren
   BusinessesSlugRoute: typeof BusinessesSlugRoute
   InvestorsSlugRoute: typeof InvestorsSlugRoute
@@ -376,6 +389,13 @@ declare module '@tanstack/react-router' {
       path: '/downloads'
       fullPath: '/downloads'
       preLoaderRoute: typeof DownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/funding-programme': {
+      id: '/funding-programme'
+      path: '/funding-programme'
+      fullPath: '/funding-programme'
+      preLoaderRoute: typeof FundingProgrammeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/global-presence': {
@@ -532,6 +552,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   ContactRoute: ContactRoute,
   DownloadsRoute: DownloadsRoute,
+  FundingProgrammeRoute: FundingProgrammeRoute,
   GlobalPresenceRoute: GlobalPresenceRouteWithChildren,
   BusinessesSlugRoute: BusinessesSlugRoute,
   InvestorsSlugRoute: InvestorsSlugRoute,
