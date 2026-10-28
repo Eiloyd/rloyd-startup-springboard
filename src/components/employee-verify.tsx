@@ -43,7 +43,7 @@ export function EmployeeVerify() {
       <div>
         <p className="eyebrow text-[10px] font-bold uppercase">Employee verification</p>
         <h2 className="mt-4 text-3xl font-black uppercase leading-[1.02] sm:text-5xl">Is this person really from Riloyd?</h2>
-        <p className="mt-4 max-w-lg text-sm leading-relaxed text-card-foreground/70">Ask the person for their Employee ID and Employee Code. Details are shown only when both match. Only ID-card information is displayed — never personal information.</p>
+        <p className="mt-4 max-w-lg text-sm leading-relaxed text-card-foreground">Ask the person for their Employee ID and Employee Code. Details are shown only when both match. Only ID-card information is displayed — never personal information.</p>
         <form onSubmit={onSubmit} className="mt-7 grid max-w-lg gap-4">
           <div className="grid gap-2"><Label htmlFor="emp-id">Employee ID</Label><Input id="emp-id" value={employeeId} onChange={(e) => setEmployeeId(e.target.value)} placeholder="e.g. RLY-1024" maxLength={40} autoComplete="off" /></div>
           <div className="grid gap-2"><Label htmlFor="emp-code">Employee Code</Label><Input id="emp-code" type="password" value={code} onChange={(e) => setCode(e.target.value)} placeholder="Security code" maxLength={64} autoComplete="off" /></div>
@@ -66,7 +66,7 @@ export function EmployeeVerify() {
           </div>
           <div className={`flex items-center gap-2 border-t border-border px-5 py-3 text-sm font-bold ${active ? "text-primary" : "text-destructive"}`}>{active ? <><BadgeCheck size={18} /> Verified active employee</> : <><ShieldAlert size={18} /> {expired ? "ID card expired" : "Not currently active"}</>}</div>
         </article>}
-        {!error && !card && <p className="text-sm text-card-foreground/60">Verification result will appear here.</p>}
+        {!error && !card && <p className="text-sm text-card-foreground">Verification result will appear here.</p>}
       </div>
     </div>
   </section>;
