@@ -17,7 +17,6 @@ import {
   UsersRound,
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import heroAsset from "@/assets/local/growth-cta.jpg.optimized.webp";
 import posterAsset from "@/assets/local/funding-programme-poster.webp";
 import pitchAsset from "@/assets/local/funding-pitch-stage.webp";
 import mentorAsset from "@/assets/local/funding-mentorship.webp";
