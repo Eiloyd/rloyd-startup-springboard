@@ -111,6 +111,7 @@ export function SiteFooter() {
     <div className="border-t border-border px-5 py-4 text-center text-[10px] text-muted-foreground">
       <p>© {new Date().getFullYear()} RILOYD. All rights reserved by RISHISHWAR INDUSTRY PRIVATE LIMITED.</p>
       <p className="mt-2">Riloyd &mdash; a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED</p>
+      <p className="mt-2">CIN Number: U85500MP2023PTC068770</p>
     </div>
   </footer>;
 }
