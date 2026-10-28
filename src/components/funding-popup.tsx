@@ -80,7 +80,7 @@ export function FundingPopup() {
           >
             <X className="h-4 w-4" />
           </button>
-          <div className={showForm ? "grid" : "grid h-[60vh] grid-rows-[4fr_1fr] md:h-auto md:grid-cols-[8fr_2fr] md:grid-rows-1"}>
+          <div className={showForm ? "grid" : "grid h-[60vh] grid-rows-[4fr_1fr] sm:h-auto lg:h-[80vh] sm:grid-cols-[auto_minmax(0,1fr)] sm:grid-rows-1"}>
             {!showForm && <button
               type="button"
               onClick={() => change(false)}
@@ -92,13 +92,13 @@ export function FundingPopup() {
                 alt="Riloyd Startup Funding Programme – Grant up to ₹20 Lakhs for the top 5 startups: 1st ₹10 Lakhs, 2nd ₹5 Lakhs, 3rd ₹2.5 Lakhs, 4th ₹1.5 Lakhs, 5th ₹1 Lakh"
                 width={1086}
                 height={1448}
-                className="h-full w-full object-contain md:h-auto md:max-h-[88vh]"
+                className="h-full w-full object-contain sm:w-auto sm:max-w-[58vw] lg:max-w-none"
               />
-              <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-background/80 px-2.5 py-1 text-[10px] font-medium text-muted-foreground md:hidden">
+              <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-background/80 px-2.5 py-1 text-[10px] font-medium text-muted-foreground sm:hidden">
                 Tap to close
               </span>
             </button>}
-            <div className={showForm ? "bg-background p-2.5 sm:p-5" : "min-h-0 overflow-y-auto bg-background p-2 md:p-2.5"}>
+            <div className={showForm ? "bg-background p-2.5 sm:p-5" : "min-h-0 overflow-y-auto bg-background p-2 sm:flex sm:flex-col sm:justify-center sm:p-4"}>
               {!showForm && !code && <Button type="button" onClick={() => setShowForm(true)} className="mb-1 h-7 w-full gap-1 rounded-md px-1 text-[10px] font-bold uppercase">
                 <Rocket className="h-3 w-3" /> Register Now
               </Button>}
