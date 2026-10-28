@@ -1,4 +1,10 @@
 ## In progress
+- [x] Footer Explore section: link to the Funding Programme page (/funding-programme)
+- [x] Funding popup: poster takes 70% and the copy 30% with smaller type, so the poster shows whole; the Zoho form opens across the full popup when Register Now is used
+- [x] Footer: 2mm under the top rule and 2mm row gaps on phones; brand lockup no longer drops below the rule on desktop
+- [x] Footer: tagline set to exactly three lines with a 2mm gap beside the logo; logo nudged 3mm left; only 2mm of space under the footer's top rule; Global Presence block and Global logo lifted with 2mm row gaps on phones
+- [x] Light theme: footer/body grey text now renders black
+- [x] Global Presence: country cards and country logos now follow the active theme (light card + dark logo in light, dark card + light logo in dark)
 - [x] Footer: show CIN Number U85500MP2023PTC068770 below the "Riloyd — a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED" line
 - [x] About page "Who We Are" section: on mobile the photo now sits behind the text as the section background; desktop keeps the side-by-side layout
 - [x] Funding popup: smaller on mobile (86% width / ~59% height, no internal scroll) and tapping the poster closes it, so visitors can explore the site
