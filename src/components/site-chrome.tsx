@@ -92,12 +92,13 @@ export function SiteFooter() {
         <div className="order-6 col-span-6 sm:hidden"><h2 className="text-xs font-bold">Global Presence</h2><div className="mt-3 grid grid-cols-4 gap-x-2 gap-y-1.5 text-xs text-muted-foreground">{marketOrder.map((key) => { const market = marketConfigs[key]; return <Link key={key} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}</div></div>
       <div className="order-9 col-span-6 text-xs leading-relaxed text-muted-foreground sm:mt-5">
         <h2 className="text-sm font-bold text-foreground">Contact</h2>
-        <div className="mt-3 grid grid-cols-3 gap-x-2 gap-y-1 text-[11px] [&>a]:whitespace-nowrap xl:text-[10.5px]">
+        <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1 text-[11px] [&>a]:whitespace-nowrap xl:text-[10.5px]">
           <a className="font-medium text-foreground hover:underline" href="mailto:info@riloyd.in">info@riloyd.in</a>
           <a className="font-medium text-foreground hover:underline" href="mailto:business@riloyd.in">business@riloyd.in</a>
           <a className="font-medium text-foreground hover:underline" href="mailto:careers@riloyd.in">careers@riloyd.in</a>
+          <a className="font-medium text-foreground hover:underline" href="mailto:idea@riloyd.in">idea@riloyd.in</a>
         </div>
-        <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-3">
+        <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-3 lg:hidden">
           <div>
             <h3 className="text-xs font-bold text-foreground">Registered Office</h3>
             <p className="mt-3">Rishishwar Industry Pvt. Ltd.<br />Mahadaji Nagar, Lashkar,<br />Gird, Gwalior,<br />Madhya Pradesh &ndash; 474001</p>
@@ -114,6 +115,16 @@ export function SiteFooter() {
       <div className="order-8 col-span-3 sm:order-6 sm:col-span-2 xl:col-span-1"><h2 className="text-xs font-bold">Downloads</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/downloads" className="font-medium text-foreground">All Reports &amp; Documents</Link><Link to="/downloads">Business Reports</Link><Link to="/downloads">Business Valuation Reports</Link><Link to="/downloads">Business Researches &amp; Reports</Link><p className="text-[10px] leading-relaxed text-muted-foreground/80">Use the report number and publish date to download.</p></div></div>
     </div>
     <div className="border-t border-border px-5 py-4 text-center text-[10px] text-muted-foreground">
+      <div className="mx-auto mb-3 hidden max-w-[1380px] grid-cols-2 gap-x-6 gap-y-3 text-left lg:grid">
+        <div>
+          <h3 className="text-[10px] font-bold text-foreground">Registered Office</h3>
+          <p className="mt-1.5">Rishishwar Industry Pvt. Ltd., Mahadaji Nagar, Lashkar,<br />Gird, Gwalior, Madhya Pradesh &ndash; 474001</p>
+        </div>
+        <div className="text-right">
+          <h3 className="text-[10px] font-bold text-foreground">Corporate Office</h3>
+          <p className="mt-1.5">Gincube Center, Motimal, Lashkar, Gird,<br />Gwalior &ndash; 474009</p>
+        </div>
+      </div>
       <p>© {new Date().getFullYear()} RILOYD. All rights reserved by RISHISHWAR INDUSTRY PRIVATE LIMITED.</p>
       <p className="mt-2">Riloyd &mdash; a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED</p>
       <p className="mt-2">CIN Number: U85500MP2023PTC068770</p>
