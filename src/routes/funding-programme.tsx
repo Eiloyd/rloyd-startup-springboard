@@ -143,7 +143,7 @@ const TOTAL = 10;
 function Slide({ n, kicker, title, tone = "plain", children, id }: { n: number; kicker: string; title: React.ReactNode; tone?: "plain" | "surface"; children: React.ReactNode; id?: string }) {
   return (
     <section id={id} className={`relative border-b border-border ${tone === "surface" ? "bg-surface" : ""}`}>
-      <div className="mx-auto w-full max-w-[1380px] px-5 py-10 sm:px-6 lg:px-12 lg:py-12">
+      <div className="mx-auto w-full max-w-[1380px] px-5 py-8 sm:px-6 lg:px-12 lg:py-10">
         <div className="mb-6 flex items-end justify-between gap-4 border-b border-border pb-4">
           <div>
             <p className="eyebrow text-[10px] font-bold uppercase">{kicker}</p>
@@ -210,9 +210,9 @@ function FundingProgramme() {
       </Slide>
 
       <Slide n={3} kicker="From Idea to Investment" title={<>The five-stage <span className="text-primary">startup journey</span></>}>
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+        <div className="grid grid-cols-2 gap-3 md:gap-4 xl:grid-cols-5">
           {journey.map(([step, title, copy]) => (
-            <div key={step} className="relative rounded-md border border-border bg-surface px-5 py-6"><p className="text-4xl font-black text-primary/40">{step}</p><h3 className="mt-3 text-sm font-extrabold uppercase tracking-wide">{title}</h3><p className="mt-2 text-xs leading-relaxed text-muted-foreground">{copy}</p></div>
+            <div key={step} className="relative rounded-md border border-border bg-surface px-4 py-4 last:col-span-2 xl:last:col-span-1 md:px-5 md:py-6"><p className="text-4xl font-black text-primary/40">{step}</p><h3 className="mt-3 text-sm font-extrabold uppercase tracking-wide">{title}</h3><p className="mt-2 text-xs leading-relaxed text-muted-foreground">{copy}</p></div>
           ))}
         </div>
         <img src={investorAsset} alt="Founders shaking hands with investors after a successful pitch" width={1440} height={1094} loading="lazy" decoding="async" className="mt-6 h-56 w-full rounded-lg border border-border object-cover lg:h-72" />
