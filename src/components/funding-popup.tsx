@@ -70,7 +70,7 @@ export function FundingPopup() {
   return (
     <>
       <Dialog open={open} onOpenChange={change}>
-        <DialogContent className="max-h-[64vh] w-[86vw] max-w-sm overflow-y-auto border-primary/30 bg-background p-0 sm:rounded-xl sm:max-h-[88vh] sm:w-[92vw] sm:max-w-5xl [&>button]:hidden">
+        <DialogContent className="max-h-[64vh] w-[86vw] max-w-sm overflow-y-auto border-primary/30 bg-background p-0 sm:rounded-xl sm:max-h-[88vh] sm:w-[92vw] sm:max-w-4xl [&>button]:hidden">
           <button
             type="button"
             onClick={() => change(false)}
@@ -91,7 +91,7 @@ export function FundingPopup() {
                 alt="Riloyd Startup Funding Programme – Grant up to ₹20 Lakhs for the top 5 startups: 1st ₹10 Lakhs, 2nd ₹5 Lakhs, 3rd ₹2.5 Lakhs, 4th ₹1.5 Lakhs, 5th ₹1 Lakh"
                 width={1086}
                 height={1448}
-                className="max-h-[45vh] w-full object-contain md:h-full md:max-h-none"
+                className="max-h-[45vh] w-full object-contain md:max-h-[88vh]"
               />
               <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-background/80 px-2.5 py-1 text-[10px] font-medium text-muted-foreground md:hidden">
                 Tap to close
