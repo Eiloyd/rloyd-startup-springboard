@@ -91,20 +91,20 @@ export function FundingPopup() {
                 alt="Riloyd Startup Funding Programme – Grant up to ₹20 Lakhs for the top 5 startups: 1st ₹10 Lakhs, 2nd ₹5 Lakhs, 3rd ₹2.5 Lakhs, 4th ₹1.5 Lakhs, 5th ₹1 Lakh"
                 width={1086}
                 height={1448}
-                className="max-h-[38vh] w-full object-contain md:h-full md:max-h-none"
+                className="max-h-[45vh] w-full object-contain md:h-full md:max-h-none"
               />
               <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-background/80 px-2.5 py-1 text-[10px] font-medium text-muted-foreground md:hidden">
                 Tap to close
               </span>
             </button>}
-            <div className="bg-background p-3 sm:p-5">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+            <div className="bg-background p-2.5 sm:p-5">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-primary sm:text-[10px]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" /> Registrations Open
               </span>
-              <DialogTitle className="mt-2 text-base font-bold text-foreground sm:text-xl">
+              <DialogTitle className="mt-1.5 text-sm font-bold text-foreground sm:text-xl">
                 Apply Your <span className="text-primary">Startup</span> Now
               </DialogTitle>
-              <DialogDescription className="mt-1 text-[11px] leading-relaxed text-muted-foreground sm:text-xs">
+              <DialogDescription className="mt-1 text-[10px] leading-relaxed text-muted-foreground sm:text-xs">
                 Grant up to ₹20 Lakhs for the top 5 startups, plus investor connect and mentorship.
               </DialogDescription>
 
@@ -117,13 +117,13 @@ export function FundingPopup() {
                 </div>
               ) : !showForm ? (
                 <div className="mt-4 space-y-3">
-                  <ul className="space-y-1 text-[11px] leading-relaxed text-muted-foreground sm:text-xs">
+                  <ul className="space-y-0.5 text-[10px] leading-relaxed text-muted-foreground sm:space-y-1 sm:text-xs">
                     <li>• Total non-refundable grant up to <b className="text-foreground">₹20 Lakhs</b></li>
                     <li>• 1st ₹10 Lakhs · 2nd ₹5 Lakhs · 3rd ₹2.5 Lakhs · 4th ₹1.5 Lakhs · 5th ₹1 Lakh</li>
                     <li>• Investor connect, mentorship &amp; business evaluation</li>
                     <li>• Strategic networking, national &amp; global exposure</li>
                   </ul>
-                  <button type="button" onClick={() => setShowForm(true)} className="flex w-full items-center justify-center gap-2 rounded-md bg-primary py-2.5 text-xs font-bold uppercase tracking-wide text-primary-foreground transition hover:opacity-90">
+                  <button type="button" onClick={() => setShowForm(true)} className="mt-1 flex w-full items-center justify-center gap-2 rounded-md bg-primary py-2 text-[11px] font-bold uppercase tracking-wide text-primary-foreground transition hover:opacity-90 sm:mt-0 sm:py-2.5 sm:text-xs">
                     <Rocket className="h-4 w-4" /> Register Now
                   </button>
                 </div>
