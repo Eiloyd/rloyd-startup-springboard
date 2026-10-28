@@ -16,6 +16,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as FundingProgrammeRouteImport } from './routes/funding-programme'
 import { Route as GlobalPresenceRouteImport } from './routes/global-presence'
+import { Route as ResearchRouteImport } from './routes/research'
 import { Route as BusinessesIndexRouteImport } from './routes/businesses.index'
 import { Route as BusinessesSlugRouteImport } from './routes/businesses.$slug'
 import { Route as GlobalPresenceSlugRouteImport } from './routes/global-presence.$slug'
@@ -68,6 +69,11 @@ const FundingProgrammeRoute = FundingProgrammeRouteImport.update({
 const GlobalPresenceRoute = GlobalPresenceRouteImport.update({
   id: '/global-presence',
   path: '/global-presence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchRoute = ResearchRouteImport.update({
+  id: '/research',
+  path: '/research',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BusinessesIndexRoute = BusinessesIndexRouteImport.update({
@@ -169,6 +175,7 @@ export interface FileRoutesByFullPath {
   '/downloads': typeof DownloadsRoute
   '/funding-programme': typeof FundingProgrammeRoute
   '/global-presence': typeof GlobalPresenceRouteWithChildren
+  '/research': typeof ResearchRoute
   '/businesses/$slug': typeof BusinessesSlugRoute
   '/global-presence/$slug': typeof GlobalPresenceSlugRoute
   '/investors/$slug': typeof InvestorsSlugRoute
@@ -196,6 +203,7 @@ export interface FileRoutesByTo {
   '/downloads': typeof DownloadsRoute
   '/funding-programme': typeof FundingProgrammeRoute
   '/global-presence': typeof GlobalPresenceRouteWithChildren
+  '/research': typeof ResearchRoute
   '/businesses/$slug': typeof BusinessesSlugRoute
   '/global-presence/$slug': typeof GlobalPresenceSlugRoute
   '/investors/$slug': typeof InvestorsSlugRoute
@@ -224,6 +232,7 @@ export interface FileRoutesById {
   '/downloads': typeof DownloadsRoute
   '/funding-programme': typeof FundingProgrammeRoute
   '/global-presence': typeof GlobalPresenceRouteWithChildren
+  '/research': typeof ResearchRoute
   '/businesses/$slug': typeof BusinessesSlugRoute
   '/global-presence/$slug': typeof GlobalPresenceSlugRoute
   '/investors/$slug': typeof InvestorsSlugRoute
@@ -253,6 +262,7 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/funding-programme'
     | '/global-presence'
+    | '/research'
     | '/businesses/$slug'
     | '/global-presence/$slug'
     | '/investors/$slug'
@@ -280,6 +290,7 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/funding-programme'
     | '/global-presence'
+    | '/research'
     | '/businesses/$slug'
     | '/global-presence/$slug'
     | '/investors/$slug'
@@ -307,6 +318,7 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/funding-programme'
     | '/global-presence'
+    | '/research'
     | '/businesses/$slug'
     | '/global-presence/$slug'
     | '/investors/$slug'
@@ -335,6 +347,7 @@ export interface RootRouteChildren {
   DownloadsRoute: typeof DownloadsRoute
   FundingProgrammeRoute: typeof FundingProgrammeRoute
   GlobalPresenceRoute: typeof GlobalPresenceRouteWithChildren
+  ResearchRoute: typeof ResearchRoute
   BusinessesSlugRoute: typeof BusinessesSlugRoute
   InvestorsSlugRoute: typeof InvestorsSlugRoute
   MentorsSlugRoute: typeof MentorsSlugRoute
@@ -403,6 +416,13 @@ declare module '@tanstack/react-router' {
       path: '/global-presence'
       fullPath: '/global-presence'
       preLoaderRoute: typeof GlobalPresenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research': {
+      id: '/research'
+      path: '/research'
+      fullPath: '/research'
+      preLoaderRoute: typeof ResearchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/businesses/': {
@@ -554,6 +574,7 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadsRoute: DownloadsRoute,
   FundingProgrammeRoute: FundingProgrammeRoute,
   GlobalPresenceRoute: GlobalPresenceRouteWithChildren,
+  ResearchRoute: ResearchRoute,
   BusinessesSlugRoute: BusinessesSlugRoute,
   InvestorsSlugRoute: InvestorsSlugRoute,
   MentorsSlugRoute: MentorsSlugRoute,
