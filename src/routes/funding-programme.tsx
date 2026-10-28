@@ -161,8 +161,8 @@ export const Route = createFileRoute("/funding-programme")({
 function Section({ kicker, title, intro, tone = "plain", children, id, compact = false }: { kicker: string; title: React.ReactNode; intro?: string; tone?: "plain" | "surface"; children: React.ReactNode; id?: string; compact?: boolean }) {
   return (
     <section id={id} className={`scroll-mt-6 border-b border-border ${tone === "surface" ? "bg-surface" : ""}`}>
-      <div className={`mx-auto w-full max-w-[1380px] px-5 sm:px-6 lg:px-12 ${compact ? "py-8 lg:py-11" : "py-14 lg:py-20"}`}>
-        <div className={`mx-auto max-w-3xl text-center ${compact ? "mb-6" : "mb-10"}`}>
+      <div className={`mx-auto w-full max-w-[1380px] px-5 sm:px-6 lg:px-12 ${compact ? "py-8 lg:py-11" : "py-10 lg:py-14"}`}>
+        <div className={`mx-auto max-w-3xl text-center ${compact ? "mb-6" : "mb-7"}`}>
           <p className="eyebrow text-[10px] font-bold uppercase">{kicker}</p>
           <h2 className="mt-3 text-[clamp(1.8rem,3.4vw,3rem)] font-black uppercase leading-[0.95]">{title}</h2>
           {intro && <p className="mt-4 text-sm leading-relaxed text-soft md:text-base">{intro}</p>}
@@ -264,7 +264,7 @@ function FundingProgramme() {
 
       <Section kicker="Investor Funding Opportunity" title={<>Up to <span className="text-primary">₹5 Crore</span> for investment-ready startups</>} intro="Subject to investor interest, due diligence and applicable terms." tone="surface">
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <img src={investorAsset} alt="Founders shaking hands with investors after a successful pitch" width={1440} height={1094} loading="lazy" decoding="async" className="h-64 w-full rounded-lg border border-border object-cover lg:h-80" />
+          <img src={gatheringExpo} alt="Founders shaking hands with investors after a successful pitch" width={1440} height={1094} loading="lazy" decoding="async" className="h-64 w-full rounded-lg border border-border object-cover lg:h-80" />
           <ol className="space-y-3">{investorSteps.map((s, i) => <li key={s} className="flex items-center gap-4 rounded-md border border-border bg-background px-5 py-3.5"><span className="text-xl font-black text-primary">0{i + 1}</span><span className="text-sm font-bold uppercase tracking-wide">{s}</span></li>)}</ol>
         </div>
       </Section>
@@ -290,7 +290,7 @@ function FundingProgramme() {
             ))}
           </div>
         </div>
-        <p className="eyebrow mt-12 text-center text-[10px] font-bold uppercase">Also included · beyond the summit</p>
+        <p className="eyebrow mt-8 text-center text-[10px] font-bold uppercase">Also included · beyond the summit</p>
         <div className="mt-5 grid gap-3 md:grid-cols-3">
           {included.map(({ icon: Icon, label, value, copy }) => (
             <div key={label} className="rounded-md border border-border bg-background px-5 py-5"><Icon className="text-primary" size={22} strokeWidth={1.7} /><p className="mt-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">{label}</p><p className="mt-1 text-2xl font-black">{value}</p><p className="mt-1 text-xs text-muted-foreground">{copy}</p></div>
@@ -341,7 +341,7 @@ function FundingProgramme() {
 
       <Section kicker="Venue & Eligibility" title={<>Gwalior · <span className="text-primary">29–31 Dec 2026</span></>} tone="surface">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
-          <img src={pitchAsset} alt="A founder pitching on stage at the summit" width={1440} height={821} loading="lazy" decoding="async" className="h-64 w-full rounded-lg border border-border object-cover lg:h-[24rem]" />
+          <img src={gatheringStage} alt="The Riloyd startup gathering stage" width={1440} height={821} loading="lazy" decoding="async" className="h-64 w-full rounded-lg border border-border object-cover lg:h-[24rem]" />
           <div>
             <p className="flex items-start gap-2 text-sm text-soft"><MapPin className="mt-0.5 shrink-0 text-primary" size={16} />Gwalior, Madhya Pradesh, India — venue shared with confirmed participants.</p>
             <p className="mt-2 text-xs text-muted-foreground">Organised by Riloyd, a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED.</p>
