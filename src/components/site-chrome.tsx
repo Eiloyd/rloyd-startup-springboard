@@ -77,24 +77,22 @@ export function SiteFooter() {
     return () => observer.disconnect();
   }, []);
   return <footer className="border-t border-border bg-background text-foreground">
-    <div className="mx-auto grid max-w-[1380px] grid-cols-6 gap-x-4 gap-y-6 px-5 py-7 sm:px-6 lg:grid-cols-[1.15fr_.6fr_.75fr_.8fr_.85fr_.85fr_.9fr_.9fr] lg:px-12">
-      <div className="col-span-6 lg:col-span-1"><Link to="/" aria-label="Riloyd home"><img src={theme === "light" ? darkLogo : logoAsset} alt="Riloyd" loading="lazy" className="h-auto w-36" decoding="async" /></Link><p className="mt-4 max-w-xs text-xs leading-relaxed text-muted-foreground">RILOYD helps ambitious businesses find expertise, capital and opportunities for sustainable growth.</p><Link to="/global-presence" aria-label="Explore Riloyd Global presence"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" loading="lazy" className="mt-3 h-12 w-auto max-w-full object-contain object-left" decoding="async" /></Link></div>
-      <div className="col-span-2 lg:col-span-1"><h2 className="text-xs font-bold">Explore</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/contact">Contact</Link><Link to="/register">Register</Link></div></div>
-      <div className="col-span-2 lg:col-span-1"><h2 className="text-xs font-bold">Our People</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/investors">Our Investors</Link><Link to="/mentors">Our Mentors</Link><Link to="/team">Our Team Members</Link><Link to="/startups">Our Startups</Link><Link to="/businesses">Our Businesses</Link></div></div>
-      <div className="col-span-2 lg:col-span-1"><h2 className="text-xs font-bold">About Us</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground">{aboutLinks.map((l) => <Link key={l.hash} to="/about" hash={l.hash}>{l.label}</Link>)}</div></div>
-      <div className="col-span-6 lg:order-last lg:col-span-2"><h2 className="text-xs font-bold">Global Presence</h2><div className="mt-4 grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs text-muted-foreground">{marketOrder.map((key) => { const market = marketConfigs[key]; return <Link key={key} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}</div></div>
-      <div className="col-span-3 lg:col-span-1"><h2 className="text-xs font-bold">Our Services</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground">{serviceOrder.map((key) => { const service = serviceConfigs[key]; return service ? <Link key={key} to="/services/$slug" params={{ slug: service.slug }}>{service.shortTitle}</Link> : null; })}</div></div>
-      <div className="col-span-3 lg:col-span-1"><h2 className="text-xs font-bold">Downloads</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/downloads" className="font-medium text-foreground">All Reports &amp; Documents</Link><Link to="/downloads">Business Reports</Link><Link to="/downloads">Business Valuation Reports</Link><Link to="/downloads">Business Researches &amp; Reports</Link><p className="text-[10px] leading-relaxed text-muted-foreground/80">Use the report number and publish date to download.</p></div></div>
-    </div>
-    <div className="border-t border-border px-5 py-6 sm:px-6 lg:px-12">
-      <div className="mx-auto max-w-[1380px] text-xs leading-relaxed text-muted-foreground">
+    <div className="mx-auto grid max-w-[1380px] grid-cols-6 gap-x-4 gap-y-4 px-5 py-7 sm:px-6 md:grid-cols-[.7fr_.85fr_.85fr_.9fr_.9fr_2fr] lg:grid-cols-[1.15fr_.6fr_.75fr_.8fr_.85fr_.85fr_.9fr_.9fr] lg:px-12">
+      <div className="order-1 col-span-6 lg:col-span-1"><Link to="/" aria-label="Riloyd home"><img src={theme === "light" ? darkLogo : logoAsset} alt="Riloyd" loading="lazy" className="h-auto w-36" decoding="async" /></Link><p className="mt-4 max-w-xs text-xs leading-relaxed text-muted-foreground">RILOYD helps ambitious businesses find expertise, capital and opportunities for sustainable growth.</p></div>
+      <div className="order-2 col-span-2 md:col-span-1"><h2 className="text-xs font-bold">Explore</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/contact">Contact</Link><Link to="/register">Register</Link></div></div>
+      <div className="order-3 col-span-2 md:col-span-1"><h2 className="text-xs font-bold">Our People</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/investors">Our Investors</Link><Link to="/mentors">Our Mentors</Link><Link to="/team">Our Team Members</Link><Link to="/startups">Our Startups</Link><Link to="/businesses">Our Businesses</Link></div></div>
+      <div className="order-4 col-span-2 row-span-2 md:col-span-1 md:row-span-1"><h2 className="text-xs font-bold">About Us</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground">{aboutLinks.map((l) => <Link key={l.hash} to="/about" hash={l.hash}>{l.label}</Link>)}</div></div>
+      <div className="contents md:order-last md:col-span-1 md:block md:min-w-0 lg:col-span-2">
+        <Link to="/global-presence" aria-label="Explore Riloyd Global presence" className="order-5 col-span-4 self-end md:mb-3 md:block"><img src={theme === "light" ? globalLight : globalGlossy} alt="Riloyd Global — explore our global presence" loading="lazy" className="h-12 w-auto max-w-full object-contain object-left" decoding="async" /></Link>
+        <div className="order-6 col-span-6"><h2 className="text-xs font-bold">Global Presence</h2><div className="mt-3 grid grid-cols-4 gap-x-2 gap-y-1.5 text-xs text-muted-foreground">{marketOrder.map((key) => { const market = marketConfigs[key]; return <Link key={key} to="/global-presence/$slug" params={{ slug: market.slug }}>{market.name}</Link>; })}</div></div>
+      <div className="order-9 col-span-6 text-xs leading-relaxed text-muted-foreground md:mt-5">
         <h2 className="text-sm font-bold text-foreground">Contact</h2>
-        <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 md:flex-col md:items-start md:gap-y-1">
           <a className="font-medium text-foreground hover:underline" href="mailto:info@riloyd.in">info@riloyd.in</a>
           <a className="font-medium text-foreground hover:underline" href="mailto:business@riloyd.in">business@riloyd.in</a>
           <a className="font-medium text-foreground hover:underline" href="mailto:careers@riloyd.in">careers@riloyd.in</a>
         </div>
-        <div className="mt-4 grid grid-cols-2 gap-x-5 gap-y-6">
+        <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-3">
           <div>
             <h3 className="text-xs font-bold text-foreground">Registered Office</h3>
             <p className="mt-3">Rishishwar Industry Pvt. Ltd.<br />Mahadaji Nagar, Lashkar,<br />Gird, Gwalior,<br />Madhya Pradesh &ndash; 474001</p>
@@ -106,6 +104,9 @@ export function SiteFooter() {
         </div>
         <div className="mt-4 flex items-center gap-2"><a className="social-link" href="https://www.linkedin.com/company/145354558" target="_blank" rel="noopener noreferrer" aria-label="Riloyd on LinkedIn"><Linkedin className="h-4 w-4" aria-hidden="true" /></a><a className="social-link" href="https://www.instagram.com/riloyd.in/" target="_blank" rel="noopener noreferrer" aria-label="Riloyd on Instagram"><Instagram className="h-4 w-4" aria-hidden="true" /></a></div>
       </div>
+      </div>
+      <div className="order-7 col-span-3 md:order-5 md:col-span-1"><h2 className="text-xs font-bold">Our Services</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground">{serviceOrder.map((key) => { const service = serviceConfigs[key]; return service ? <Link key={key} to="/services/$slug" params={{ slug: service.slug }}>{service.shortTitle}</Link> : null; })}</div></div>
+      <div className="order-8 col-span-3 md:order-6 md:col-span-1"><h2 className="text-xs font-bold">Downloads</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/downloads" className="font-medium text-foreground">All Reports &amp; Documents</Link><Link to="/downloads">Business Reports</Link><Link to="/downloads">Business Valuation Reports</Link><Link to="/downloads">Business Researches &amp; Reports</Link><p className="text-[10px] leading-relaxed text-muted-foreground/80">Use the report number and publish date to download.</p></div></div>
     </div>
     <div className="border-t border-border px-5 py-4 text-center text-[10px] text-muted-foreground">
       <p>© {new Date().getFullYear()} RILOYD. All rights reserved by RISHISHWAR INDUSTRY PRIVATE LIMITED.</p>
