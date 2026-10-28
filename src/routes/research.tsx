@@ -46,7 +46,7 @@ function ResearchPage() {
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {focusAreas.map(area => <article key={area.title} className="border border-border bg-card p-6">
             <area.icon size={28} className="text-primary" />
-            <h3 className="mt-4 text-lg font-bold uppercase">{area.title}</h3>
+            <h3 className="mt-4 text-lg font-bold uppercase text-card-foreground">{area.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-card-foreground">{area.text}</p>
           </article>)}
         </div>
@@ -67,7 +67,7 @@ function ResearchPage() {
 
     <section className="px-5 py-14 sm:px-6 lg:px-12">
       <div className="mx-auto max-w-[1100px] border border-border bg-card p-8 sm:p-10">
-        <h2 className="text-2xl font-black uppercase sm:text-3xl">Download our research reports</h2>
+        <h2 className="text-2xl font-black uppercase text-card-foreground sm:text-3xl">Download our research reports</h2>
         <p className="mt-4 max-w-[680px] text-sm leading-relaxed text-card-foreground sm:text-base">
           Our published research reports, business studies and analysis papers are available in the Downloads centre. Enter the report number and publish date shared with you to download your copy.
         </p>
