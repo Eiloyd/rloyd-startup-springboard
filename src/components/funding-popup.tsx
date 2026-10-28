@@ -71,7 +71,7 @@ export function FundingPopup() {
   return (
     <>
       <Dialog open={open} onOpenChange={change}>
-        <DialogContent className={`max-h-[64vh] w-[86vw] max-w-sm overflow-y-auto border-primary/30 bg-background p-0 sm:rounded-xl sm:max-h-[88vh] sm:w-[92vw] ${showForm ? "sm:max-w-4xl" : "sm:max-w-[30rem]"} [&>button]:hidden`}>
+        <DialogContent className={`max-h-[64vh] w-[86vw] max-w-sm overflow-y-auto border-primary/30 bg-background p-0 sm:rounded-xl sm:max-h-[88vh] sm:w-[92vw] ${showForm ? "sm:max-w-4xl" : "sm:max-w-3xl"} [&>button]:hidden`}>
           <button
             type="button"
             onClick={() => change(false)}
@@ -80,7 +80,7 @@ export function FundingPopup() {
           >
             <X className="h-4 w-4" />
           </button>
-          <div className={showForm ? "grid" : "grid h-[60vh] grid-rows-[minmax(0,4fr)_minmax(0,1fr)] sm:h-[86vh]"}>
+          <div className={showForm ? "grid" : "grid h-[60vh] grid-rows-[minmax(0,4fr)_minmax(0,1fr)] sm:h-[86vh] sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] sm:grid-rows-1"}>
             {!showForm && <button
               type="button"
               onClick={() => change(false)}
