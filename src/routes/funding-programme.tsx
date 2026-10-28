@@ -307,9 +307,9 @@ function FundingProgramme() {
                   return <div key={title}><Icon className="mx-auto text-primary" size={24} strokeWidth={1.7} /><p className="mt-1.5 text-[10px] font-extrabold leading-tight sm:text-xs">{title}</p><p className="text-[9px] text-muted-foreground sm:text-[10px]">({note})</p></div>;
                 })}
               </div>
-              <div className="grid grid-cols-5 overflow-hidden rounded-md">
+              <div className="grid min-h-32 flex-1 grid-cols-5 overflow-hidden rounded-md">
                 {[[stayAsset, "Hotel stay"], [foodAsset, "Indian meals"], [travelAsset, "Train travel"], [localAsset, "Local travel in Gwalior"], [gwaliorAsset, "Gwalior Fort tour"]].map(([src, alt]) => (
-                  <img key={alt} src={src} alt={alt} width={480} height={480} loading="lazy" decoding="async" className="aspect-square h-full w-full object-cover sm:aspect-[4/5]" />
+                  <img key={alt} src={src} alt={alt} width={480} height={480} loading="lazy" decoding="async" className="h-full min-h-32 w-full object-cover" />
                 ))}
               </div>
               <div className="mt-auto rounded-md bg-primary/15 px-4 py-3 text-center"><p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Stay · Food · One-side ticket · Local travel · Local tour</p><p className="text-xl font-black">COMPLETELY FREE</p></div>
