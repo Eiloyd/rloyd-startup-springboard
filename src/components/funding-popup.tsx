@@ -70,7 +70,7 @@ export function FundingPopup() {
   return (
     <>
       <Dialog open={open} onOpenChange={change}>
-        <DialogContent className="max-h-[92vh] w-[96vw] max-w-5xl overflow-y-auto border-primary/30 bg-background p-0 sm:rounded-xl [&>button]:hidden">
+        <DialogContent className="max-h-[62vh] w-[86vw] max-w-sm overflow-y-auto border-primary/30 bg-background p-0 sm:rounded-xl sm:max-h-[88vh] sm:w-[92vw] sm:max-w-5xl [&>button]:hidden">
           <button
             type="button"
             onClick={() => change(false)}
@@ -80,24 +80,32 @@ export function FundingPopup() {
             <X className="h-4 w-4" />
           </button>
           <div className="grid md:grid-cols-[1fr_1.05fr]">
-            <div className="bg-background">
+            <button
+              type="button"
+              onClick={() => change(false)}
+              aria-label="Close funding programme popup"
+              className="relative block w-full cursor-zoom-out bg-background md:h-full"
+            >
               <img decoding="async"
                 src={posterAsset}
-                alt="Riloyd Startup Funding Programme – Grant up to ₹22.5 Lakhs for the top 3 startups: 1st ₹10 Lakhs, 2nd ₹7.5 Lakhs, 3rd ₹5 Lakhs"
+                alt="Riloyd Startup Funding Programme – Grant up to ₹20 Lakhs for the top 5 startups: 1st ₹10 Lakhs, 2nd ₹5 Lakhs, 3rd ₹2.5 Lakhs, 4th ₹1.5 Lakhs, 5th ₹1 Lakh"
                 width={1086}
                 height={1448}
-                className="h-full w-full object-cover"
+                className="max-h-[22vh] w-full object-contain md:h-full md:max-h-none md:object-cover"
               />
-            </div>
-            <div className="bg-background p-6 sm:p-8">
+              <span className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-background/80 px-2.5 py-1 text-[10px] font-medium text-muted-foreground md:hidden">
+                Tap to close
+              </span>
+            </button>
+            <div className="bg-background p-3 sm:p-8">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" /> Registrations Open
               </span>
-              <DialogTitle className="mt-3 text-2xl font-bold text-foreground sm:text-3xl">
+              <DialogTitle className="mt-2 text-lg font-bold text-foreground sm:text-3xl">
                 Apply Your <span className="text-primary">Startup</span> Now
               </DialogTitle>
-              <DialogDescription className="mt-1 text-sm text-muted-foreground">
-                Grant up to ₹22.5 Lakhs for the top 3 startups, plus investor connect and mentorship.
+              <DialogDescription className="mt-1 text-xs text-muted-foreground sm:text-sm">
+                Grant up to ₹20 Lakhs for the top 5 startups, plus investor connect and mentorship.
               </DialogDescription>
 
               {code ? (
@@ -108,10 +116,10 @@ export function FundingPopup() {
                   <button type="button" onClick={() => change(false)} className="mt-5 rounded-md bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground">Close</button>
                 </div>
               ) : !showForm ? (
-                <div className="mt-6 space-y-4">
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Total non-refundable grant up to <b className="text-foreground">₹22.5 Lakhs</b></li>
-                    <li>• 1st ₹10 Lakhs · 2nd ₹7.5 Lakhs · 3rd ₹5 Lakhs</li>
+                <div className="mt-4 space-y-3">
+                  <ul className="space-y-1.5 text-xs text-muted-foreground sm:text-sm">
+                    <li>• Total non-refundable grant up to <b className="text-foreground">₹20 Lakhs</b></li>
+                    <li>• 1st ₹10 Lakhs · 2nd ₹5 Lakhs · 3rd ₹2.5 Lakhs · 4th ₹1.5 Lakhs · 5th ₹1 Lakh</li>
                     <li>• Investor connect, mentorship &amp; business evaluation</li>
                     <li>• Strategic networking, national &amp; global exposure</li>
                   </ul>
@@ -124,7 +132,7 @@ export function FundingPopup() {
                   <iframe
                     title="Startup Idea Registration Form"
                     src="https://forms.zohopublic.in/RIPLSTORES/form/StartupIdeaRegistrationForm/formperma/1SNzTjiKwSF14T0BCEyJLvZCZDDowZl3NYWbAjpy1KE"
-                    className="block h-[65vh] w-full border-0"
+                    className="block h-[60vh] w-full border-0 sm:h-[65vh]"
                     loading="lazy"
                   />
                 </div>

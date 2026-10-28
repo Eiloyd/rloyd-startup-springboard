@@ -78,7 +78,7 @@ export function SiteFooter() {
   }, []);
   return <footer className="border-t border-border bg-background text-foreground">
     <div className="mx-auto grid max-w-[1380px] grid-cols-6 gap-x-4 gap-y-4 px-5 py-7 sm:px-6 lg:grid-cols-[1.15fr_.6fr_.75fr_.8fr_.85fr_.85fr_.9fr_.9fr] lg:px-12">
-      <div className="order-1 col-span-6 lg:col-span-1"><Link to="/" aria-label="Riloyd home"><img src={theme === "light" ? darkLogo : logoAsset} alt="Riloyd" loading="lazy" className="h-auto w-36" decoding="async" /></Link><p className="mt-4 max-w-xs text-xs leading-relaxed text-muted-foreground">RILOYD helps ambitious businesses find expertise, capital and opportunities for sustainable growth.</p></div>
+      <div className="order-1 col-span-6 lg:col-span-1"><div className="flex items-center gap-3 sm:block"><Link to="/" aria-label="Riloyd home" className="w-[40%] shrink-0 sm:w-auto"><img src={theme === "light" ? darkLogo : logoAsset} alt="Riloyd" loading="lazy" className="h-auto w-full sm:w-36" decoding="async" /></Link><p className="flex-1 text-xs leading-relaxed text-muted-foreground sm:mt-4 sm:max-w-xs">RILOYD helps ambitious businesses find expertise, capital and opportunities for sustainable growth.</p></div></div>
       <div className="order-2 col-span-2 sm:col-span-2 lg:col-span-1"><h2 className="text-xs font-bold">Explore</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/">Home</Link><Link to="/about">About</Link><Link to="/contact">Contact</Link><Link to="/register">Register</Link></div></div>
       <div className="order-3 col-span-2 sm:col-span-2 lg:col-span-1"><h2 className="text-xs font-bold">Our People</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground"><Link to="/investors">Our Investors</Link><Link to="/mentors">Our Mentors</Link><Link to="/team">Our Team Members</Link><Link to="/startups">Our Startups</Link><Link to="/businesses">Our Businesses</Link></div></div>
       <div className="order-4 col-span-2 row-span-2 sm:col-span-2 sm:row-span-1 lg:col-span-1"><h2 className="text-xs font-bold">About Us</h2><div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground">{aboutLinks.map((l) => <Link key={l.hash} to="/about" hash={l.hash}>{l.label}</Link>)}</div></div>
@@ -111,6 +111,7 @@ export function SiteFooter() {
     <div className="border-t border-border px-5 py-4 text-center text-[10px] text-muted-foreground">
       <p>© {new Date().getFullYear()} RILOYD. All rights reserved by RISHISHWAR INDUSTRY PRIVATE LIMITED.</p>
       <p className="mt-2">Riloyd &mdash; a unit of RISHISHWAR INDUSTRY PRIVATE LIMITED</p>
+      <p className="mt-2">CIN Number: U85500MP2023PTC068770</p>
     </div>
   </footer>;
 }
