@@ -1,6 +1,6 @@
 import drizzleSource from '../../drizzle/schema.ts?raw';
-import inboxSource from '../../drizzle/migrations/0000_registration_and_enquiry_inbox.sql?raw';
-import reportsSource from '../../drizzle/migrations/0002_customer_report_downloads.sql?raw';
+// Migration history may be reset on remix, so read whatever SQL files exist instead of fixed names.
+const migrationSources = Object.values(import.meta.glob('../../drizzle/migrations/*.sql', { query: '?raw', import: 'default', eager: true })) as string[];
 
 export type Column = { name: string; type: string; nullable: boolean };
 export type Table = { name: string; columns: Column[]; rls: boolean };
@@ -26,7 +26,7 @@ const baseline = (name: string, fields: string): Table => ({ name, rls: true, co
   return [{ name: column, type: normalizeType(type.replace('?', '')), nullable: type.endsWith('?') }];
 }) });
 export const expectedTables: Table[] = [
-  ...parseSqlTables(inboxSource), ...parseSqlTables(reportsSource),
+  ...migrationSources.flatMap(parseSqlTables),
   baseline('employees', 'id:uuid employee_id:text code_hash:text full_name:text photo_url:text? designation:text department:text status:text valid_until:date? created_at:timestamptz updated_at:timestamptz'),
   baseline('employee_verification_attempts', 'id:bigint employee_id:text success:boolean created_at:timestamptz'),
   baseline('people_profiles', 'id:uuid person_group:text slug:text name:text role:text location:text focus:text[] summary:text bio:text photo_url:text? sort_order:integer created_at:timestamptz'),
