@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "0434c757-aba2-40bb-80ed-57a4dfc8e3e6",
-  "project_id": "9d2636be-651a-4151-9fb2-b9b514ccdfc1",
-  "url": "/__l5e/assets-v1/0434c757-aba2-40bb-80ed-57a4dfc8e3e6/riloyd-singapore-transparent.png.compact.webp",
-  "r2_key": "a/v1/9d2636be-651a-4151-9fb2-b9b514ccdfc1/0434c757-aba2-40bb-80ed-57a4dfc8e3e6/riloyd-singapore-transparent.png.compact.webp",
-  "original_filename": "riloyd-singapore-transparent.png.compact.webp",
-  "size": 29748,
   "content_type": "image/webp",
-  "created_at": "2026-10-28T07:40:55Z"
+  "created_at": "2026-10-28T07:40:55Z",
+  "original_filename": "riloyd-singapore-transparent.png.compact.webp",
+  "project_id": "d6ccc4a9-2821-4101-8883-7d261486b395",
+  "r2_key": "a/v1/d6ccc4a9-2821-4101-8883-7d261486b395/0434c757-aba2-40bb-80ed-57a4dfc8e3e6/riloyd-singapore-transparent.png.compact.webp",
+  "size": 29748,
+  "url": "/__l5e/assets-v1/0434c757-aba2-40bb-80ed-57a4dfc8e3e6/riloyd-singapore-transparent.png.compact.webp",
+  "version": 1
 }
