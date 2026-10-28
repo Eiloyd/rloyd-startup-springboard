@@ -80,7 +80,7 @@ export function FundingPopup() {
           >
             <X className="h-4 w-4" />
           </button>
-          <div className={showForm ? "grid" : "grid h-[60vh] grid-rows-[4fr_1fr] sm:h-[80vh] sm:grid-cols-[auto_minmax(0,1fr)] sm:grid-rows-1"}>
+          <div className={showForm ? "grid" : "grid h-[60vh] grid-rows-[4fr_1fr] sm:h-auto lg:h-[80vh] sm:grid-cols-[auto_minmax(0,1fr)] sm:grid-rows-1"}>
             {!showForm && <button
               type="button"
               onClick={() => change(false)}
