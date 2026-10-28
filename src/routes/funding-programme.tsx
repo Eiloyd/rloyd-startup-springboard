@@ -18,13 +18,9 @@ import {
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import posterAsset from "@/assets/local/funding-programme-poster.webp";
-import pitchAsset from "@/assets/local/funding-pitch-stage.webp";
 import mentorAsset from "@/assets/local/funding-mentorship.webp";
 import gwaliorAsset from "@/assets/local/funding-gwalior.webp";
-import stageAsset from "@/assets/local/summit-stage-india.webp";
-import networkingAsset from "@/assets/local/summit-networking-india.webp";
 import prototypeAsset from "@/assets/local/summit-prototype-india.webp";
-import investorAsset from "@/assets/local/funding-investor-deal.webp";
 import stayAsset from "@/assets/local/free-stay.webp";
 import foodAsset from "@/assets/local/free-food.webp";
 import travelAsset from "@/assets/local/free-travel.webp";
