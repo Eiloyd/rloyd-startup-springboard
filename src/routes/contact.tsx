@@ -154,7 +154,7 @@ function ContactPage() {
               <div className="min-w-0"><h3 className="font-bold">Our Location</h3><p className="mt-1 text-sm leading-relaxed text-soft">Gwalior, Madhya Pradesh, India</p><a className="mt-4 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-bold" href="https://maps.google.com/?q=Gwalior+Madhya+Pradesh" target="_blank" rel="noreferrer">View Gwalior <ArrowRight size={14} className="text-primary" /></a></div>
             </div>
             <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-5 border-b border-border pb-8">
-              {contactItems.map(({ icon: Icon, label, value, href }) => <a key={label} href={href} {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="flex min-w-0 items-center gap-3"><span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-primary text-primary"><Icon size={16} /></span><span className="min-w-0"><b className="block text-[13px] leading-tight">{label}</b><span className="mt-0.5 block break-all text-[11px] leading-snug text-soft">{value}</span></span></a>)}
+              {contactItems.map(({ icon: Icon, label, value, href }) => <a key={label} href={href} {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="flex min-w-0 items-center gap-3"><span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-primary text-primary"><Icon size={16} /></span><span className="min-w-0"><b className="block text-[13px] leading-tight">{label}</b><span className="mt-0.5 block break-words text-[11px] leading-snug text-soft [hyphens:none]">{value}</span></span></a>)}
             </div>
           </div>
 
