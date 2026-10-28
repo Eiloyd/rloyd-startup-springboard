@@ -50,6 +50,13 @@ function DownloadsPage() {
     <div className="mx-auto max-w-[1100px]">
       <p className="eyebrow text-xs font-bold uppercase">Riloyd documents</p>
       <h1 className="mt-4 text-4xl font-black uppercase sm:text-5xl">Downloads</h1>
+      {!ready ? null : !session ? (
+        <div className="mt-10 max-w-xl border border-border bg-surface p-6 sm:p-8">
+          <div className="flex items-center gap-3"><Lock className="text-primary" size={22} /><p className="font-extrabold">Sign in to download reports</p></div>
+          <p className="mt-2 text-sm text-muted-foreground">Report downloads are available to registered members only. Sign in, then enter your report number and publish date.</p>
+          <AuthForm redirectPath="/downloads" />
+        </div>
+      ) : (
       <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.2fr]">
         <div>
           <h2 className="text-2xl font-bold">Your business reports</h2>
