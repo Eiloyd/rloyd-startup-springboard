@@ -61,3 +61,4 @@
 - [x] Footer: leave a 5mm gap between footer text and the border lines (text currently sits too close to them)
 - [x] Contact page: "Get in touch" contact entries laid out in 2 columns
 - [x] Footer bottom strip: reduced the gap between text lines (8px -> 4px) so the block reads tighter
+- [x] Funding popup: poster left / text right on tablet & desktop (50-50), poster top / text below on phone; popup height now hugs the poster
