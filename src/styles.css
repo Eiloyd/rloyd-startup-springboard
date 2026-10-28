@@ -262,8 +262,8 @@
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 
-/* Country logos carry either a light or a dark artwork; keep whichever theme is
-   active readable by inverting only the mismatched tone. */
-.logo-tone-dark { filter: invert(1) hue-rotate(180deg); }
+/* Country logos carry either a light or a dark artwork. Whichever tone fights the
+   active theme is shown as a solid silhouette so it always reads on the card. */
+.logo-tone-dark { filter: brightness(0) invert(1); }
 .light .logo-tone-dark { filter: none; }
-.light .logo-tone-light { filter: invert(1) hue-rotate(180deg); }
+.light .logo-tone-light { filter: brightness(0); }

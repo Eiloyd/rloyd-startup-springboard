@@ -1,4 +1,6 @@
 ## In progress
+- [x] Funding popup: poster takes 70% and the copy 30% with smaller type, so the poster shows whole; the Zoho form opens across the full popup when Register Now is used
+- [x] Footer: 2mm under the top rule and 2mm row gaps on phones; brand lockup no longer drops below the rule on desktop
 - [x] Footer: tagline set to exactly three lines with a 2mm gap beside the logo; logo nudged 3mm left; only 2mm of space under the footer's top rule; Global Presence block and Global logo lifted with 2mm row gaps on phones
 - [x] Light theme: footer/body grey text now renders black
 - [x] Global Presence: country cards and country logos now follow the active theme (light card + dark logo in light, dark card + light logo in dark)
