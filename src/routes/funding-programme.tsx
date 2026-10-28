@@ -178,7 +178,7 @@ function FundingProgramme() {
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
       <section className="hero-shell relative border-b border-border lg:flex lg:min-h-[92svh] lg:items-center">
-        <img src={stageAsset} alt="" aria-hidden width={1420} height={912} className="absolute inset-0 h-full w-full object-cover" decoding="async" fetchPriority="high" />
+        <img src={gwaliorAsset} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" decoding="async" fetchPriority="high" />
         <div className="hero-shade absolute inset-0" />
         <div className="relative z-10 mx-auto w-full max-w-[1380px] px-5 py-16 sm:px-6 lg:px-12">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
