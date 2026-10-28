@@ -54,3 +54,4 @@
 
 - [x] Homepage Startup Funding popup (poster + Apply form, floating Apply Now button)
 - [x] Summit popup uses the existing Zoho registration form; submissions remain in Zoho
+- [x] Footer: fourth email idea@riloyd.in in 2 columns; desktop offices moved into the copyright strip (Registered left, Corporate right, 2 lines each)
