@@ -25,6 +25,11 @@ import stageAsset from "@/assets/local/summit-stage-india.webp";
 import networkingAsset from "@/assets/local/summit-networking-india.webp";
 import prototypeAsset from "@/assets/local/summit-prototype-india.webp";
 import investorAsset from "@/assets/local/funding-investor-deal.webp";
+import stayAsset from "@/assets/local/free-stay.webp";
+import foodAsset from "@/assets/local/free-food.webp";
+import travelAsset from "@/assets/local/free-travel.webp";
+import localAsset from "@/assets/local/free-local.webp";
+import { BedDouble, Car, TrainFront, Utensils } from "lucide-react";
 
 const ZOHOPUBLIC = "https://forms.zohopublic.in/RIPLSTORES/form/StartupIdeaRegistrationForm/formperma/1SNzTjiKwSF14T0BCEyJLvZCZDDowZl3NYWbAjpy1KE";
 
@@ -284,20 +289,42 @@ function FundingProgramme() {
       </Section>
 
       <Section kicker="Fees & Free Benefits" title={<>Simple pricing, <span className="text-primary">stay covered</span></>}>
-        <div className="grid gap-6 lg:grid-cols-3">
-          <div className="space-y-3">
-            <div className="rounded-md border border-border bg-surface px-5 py-5"><p className="text-3xl font-black">₹2,999 <span className="text-sm font-semibold text-muted-foreground">+18% GST</span></p><p className="mt-2 text-xs text-muted-foreground">Registration — up to two persons per startup.</p></div>
-            <div className="rounded-md border border-border bg-surface px-5 py-5"><p className="text-3xl font-black">₹2,000 <span className="text-sm font-semibold text-muted-foreground">+18% GST / person</span></p><p className="mt-2 text-xs text-muted-foreground">Each additional participant.</p></div>
-            <div className="rounded-md border border-primary/40 bg-primary/10 px-5 py-4 text-xs"><b>50% refund</b> if not selected in screening. T&amp;C applicable.</div>
+        <div className="grid gap-4 lg:grid-cols-[1fr_1.6fr_1fr]">
+          <div className="flex flex-col overflow-hidden rounded-lg border border-border bg-surface">
+            <p className="border-b border-border bg-primary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-primary-foreground">Registration Fee</p>
+            <div className="flex flex-1 flex-col gap-3 p-4">
+              <div className="flex items-center gap-4 rounded-md bg-primary/15 px-4 py-4"><UsersRound className="shrink-0 text-primary" size={26} /><div><p className="text-3xl font-black">₹2,999/-</p><p className="text-xs text-muted-foreground">+18% GST · up to 2 persons per startup</p></div></div>
+              <div className="flex items-center gap-4 rounded-md border border-border px-4 py-4"><UsersRound className="shrink-0 text-primary" size={26} /><div><p className="text-xs font-bold">Additional Participant</p><p className="text-2xl font-black">₹2,000/-</p><p className="text-xs text-muted-foreground">+18% GST per person, beyond the first 2</p></div></div>
+              <div className="mt-auto rounded-md border border-primary/40 bg-primary/10 px-4 py-3 text-xs"><b>50% refund</b> if not selected in screening. T&amp;C applicable.</div>
+            </div>
           </div>
-          <div className="lg:col-span-2">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Completely free for selected participants</p>
-            <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-              {freeForSelected.map(([title, note]) => (
-                <li key={title} className="flex items-start gap-3 rounded-md border border-border bg-surface px-5 py-4"><Check className="mt-0.5 shrink-0 text-primary" size={16} strokeWidth={2.4} /><span className="text-sm font-semibold">{title} <span className="font-normal text-muted-foreground">({note})</span></span></li>
-              ))}
-            </ul>
-            <p className="mt-4 text-xs text-muted-foreground">Subject to policy, eligibility and Terms and Conditions.</p>
+          <div className="flex flex-col overflow-hidden rounded-lg border border-border bg-surface">
+            <p className="border-b border-border bg-primary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-primary-foreground">Completely free for selected participants</p>
+            <div className="flex flex-1 flex-col gap-4 p-4">
+              <div className="grid grid-cols-5 gap-1 text-center">
+                {freeForSelected.map(([title, note], i) => {
+                  const Icon = [BedDouble, Utensils, TrainFront, Car, MapPin][i];
+                  return <div key={title}><Icon className="mx-auto text-primary" size={24} strokeWidth={1.7} /><p className="mt-1.5 text-[10px] font-extrabold leading-tight sm:text-xs">{title}</p><p className="text-[9px] text-muted-foreground sm:text-[10px]">({note})</p></div>;
+                })}
+              </div>
+              <div className="grid grid-cols-5 overflow-hidden rounded-md">
+                {[[stayAsset, "Hotel stay"], [foodAsset, "Indian meals"], [travelAsset, "Train travel"], [localAsset, "Local travel in Gwalior"], [gwaliorAsset, "Gwalior Fort tour"]].map(([src, alt]) => (
+                  <img key={alt} src={src} alt={alt} width={480} height={480} loading="lazy" decoding="async" className="aspect-square h-full w-full object-cover sm:aspect-[4/5]" />
+                ))}
+              </div>
+              <div className="mt-auto rounded-md bg-primary/15 px-4 py-3 text-center"><p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Stay · Food · One-side ticket · Local travel · Local tour</p><p className="text-xl font-black">COMPLETELY FREE</p></div>
+              <p className="text-[10px] text-muted-foreground">Subject to policy, eligibility and Terms and Conditions.</p>
+            </div>
+          </div>
+          <div className="flex flex-col overflow-hidden rounded-lg border border-border bg-surface">
+            <p className="border-b border-border bg-primary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-primary-foreground">Event Details</p>
+            <div className="flex flex-1 flex-col gap-3 p-4 text-sm">
+              <p className="flex gap-3"><CalendarDays className="shrink-0 text-primary" size={18} /><span><b>29 – 31 December 2026</b><br /><span className="text-xs text-muted-foreground">3-Day Summit</span></span></p>
+              <p className="flex gap-3"><MapPin className="shrink-0 text-primary" size={18} /><b>Gwalior, Madhya Pradesh, India</b></p>
+              <p className="flex gap-3"><Check className="shrink-0 text-primary" size={18} /><span>Venue shared with confirmed participants</span></p>
+              <img src={gwaliorAsset} alt="Gwalior Fort at sunset" loading="lazy" decoding="async" className="h-40 w-full flex-1 rounded-md object-cover" />
+              <a href="#register" className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-bold text-primary-foreground">Apply Now <ArrowRight size={16} /></a>
+            </div>
           </div>
         </div>
       </Section>
