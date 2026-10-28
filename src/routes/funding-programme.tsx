@@ -313,7 +313,7 @@ function FundingProgramme() {
                   return <div key={title}><Icon className="mx-auto text-primary" size={24} strokeWidth={1.7} /><p className="mt-1.5 text-[10px] font-extrabold leading-tight sm:text-xs">{title}</p><p className="text-[9px] text-muted-foreground sm:text-[10px]">({note})</p></div>;
                 })}
               </div>
-              <div className="grid h-24 grid-cols-5 overflow-hidden rounded-md">
+              <div className="grid h-28 grid-cols-5 overflow-hidden rounded-md">
                 {[[stayAsset, "Hotel stay"], [foodAsset, "Indian meals"], [travelAsset, "Train travel"], [localAsset, "Local travel in Gwalior"], [gwaliorAsset, "Gwalior Fort tour"]].map(([src, alt]) => (
                   <img key={alt} src={src} alt={alt} width={480} height={480} loading="lazy" decoding="async" className="h-full w-full object-cover" />
                 ))}
@@ -328,8 +328,8 @@ function FundingProgramme() {
               <p className="flex gap-3"><CalendarDays className="shrink-0 text-primary" size={18} /><span><b>29 – 31 December 2026</b><br /><span className="text-xs text-muted-foreground">3-Day Summit</span></span></p>
               <p className="flex gap-3"><MapPin className="shrink-0 text-primary" size={18} /><b>Gwalior, Madhya Pradesh, India</b></p>
               <p className="flex gap-3"><Check className="shrink-0 text-primary" size={18} /><span>Venue shared with confirmed participants</span></p>
-              <img src={gwaliorAsset} alt="Gwalior Fort at sunset" loading="lazy" decoding="async" className="h-28 min-h-0 w-full flex-1 rounded-md object-cover" />
-              <a href="#register" className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-bold text-primary-foreground">Apply Now <ArrowRight size={16} /></a>
+              <img src={gwaliorAsset} alt="Gwalior Fort at sunset" loading="lazy" decoding="async" className="h-32 w-full rounded-md object-cover" />
+              <a href="#register" className="mt-auto inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-bold text-primary-foreground">Apply Now <ArrowRight size={16} /></a>
             </div>
           </div>
         </div>
@@ -359,7 +359,7 @@ function FundingProgramme() {
               <span className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-primary-foreground">● Event highlights</span>
             </div>
             {[[gatheringPitch,"Founders pitching on the Riloyd stage"],[gatheringExpo,"Networking across the expo floor"],[gatheringRegistration,"Registration desk"],[gatheringBadges,"Startup, investor & mentor passes"],[gatheringHall,"The main summit hall"],[gatheringKit,"Participant welcome kit"]].map(([src,label], i) => (
-              <figure key={label} className={`group relative overflow-hidden rounded-lg border border-border ${i === 0 ? "md:col-span-2" : ""}`}><img src={src} alt={label} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/60 to-transparent px-3 pb-2.5 pt-10 text-[11px] font-extrabold uppercase tracking-wide">{label}</figcaption></figure>
+              <figure key={label} className={`group relative overflow-hidden rounded-lg border border-border ${i >= 4 ? "md:col-span-2" : ""}`}><img src={src} alt={label} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/60 to-transparent px-3 pb-2.5 pt-10 text-[11px] font-extrabold uppercase tracking-wide">{label}</figcaption></figure>
             ))}
           </div>
         </div>
