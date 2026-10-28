@@ -153,7 +153,7 @@ export const Route = createFileRoute("/funding-programme")({
 function Section({ kicker, title, intro, tone = "plain", children, id, compact = false }: { kicker: string; title: React.ReactNode; intro?: string; tone?: "plain" | "surface"; children: React.ReactNode; id?: string; compact?: boolean }) {
   return (
     <section id={id} className={`scroll-mt-6 border-b border-border ${tone === "surface" ? "bg-surface" : ""}`}>
-      <div className={`mx-auto w-full max-w-[1380px] px-5 sm:px-6 lg:px-12 ${compact ? "py-9 lg:py-12" : "py-14 lg:py-20"}`}>
+      <div className={`mx-auto w-full max-w-[1380px] px-5 sm:px-6 lg:px-12 ${compact ? "py-8 lg:py-11" : "py-14 lg:py-20"}`}>
         <div className={`mx-auto max-w-3xl text-center ${compact ? "mb-6" : "mb-10"}`}>
           <p className="eyebrow text-[10px] font-bold uppercase">{kicker}</p>
           <h2 className="mt-3 text-[clamp(1.8rem,3.4vw,3rem)] font-black uppercase leading-[0.95]">{title}</h2>
@@ -220,7 +220,7 @@ function FundingProgramme() {
 
       <Section kicker="Non-Refundable Grant Pool" title={<>Up to <span className="text-primary">₹20 Lakhs</span> for the top five</>} intro="Shared by the five top-performing startups. Grant ≠ investment." tone="surface" compact>
         <div className="grid gap-4 md:grid-cols-[.8fr_1.2fr] md:items-stretch">
-          <img src={posterAsset} alt="Riloyd Startup Funding Programme poster with the five winning grant tiers" width={1088} height={1456} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[46vh] w-full rounded-lg border border-border object-contain md:h-full md:max-h-[430px] md:object-cover md:object-top" />
+          <img src={posterAsset} alt="Riloyd Startup Funding Programme poster with the five winning grant tiers" width={1088} height={1456} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[36vh] w-full rounded-lg border border-border object-contain md:h-full md:max-h-[430px] md:object-cover md:object-top" />
           <div className="flex flex-col">
             <div className="grid flex-1 grid-cols-2 gap-2.5">
               {tiers.map(([rank, amount]) => (
